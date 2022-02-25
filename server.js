@@ -9,6 +9,7 @@ const express = require('express');
 
 //set up the express function
 const app = express()
+const port = process.env.PORT || 3000
 
 // middleware
 app.use(express.static('public'));
@@ -68,4 +69,4 @@ app.get('/', (req, res)=>{
 //   res.status(404).render('404')
 // })
 
-app.listen(3000, () => {'Server is running on port 3000'})
+app.listen(port, () => {'Server is running on port 3000'})
