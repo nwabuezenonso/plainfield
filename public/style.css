@@ -4,10 +4,17 @@
     font-family: sans-serif;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
+/*HEADER*/
+
 .banner{
     width: 100%;
     height: 100vh;
     background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75) ), url('img/Building.jpg') ;
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 7%, rgba(0,0,0,1) 27%, rgba(77,0,116,1) 100%); */
     background-size: cover;
     background-position: center;
 }
@@ -22,7 +29,8 @@
 }
 
 .logo{
-    width: 10%;
+    /* margin-top: 10px; */
+    width: 90px;
     cursor: pointer;
 }
 
@@ -39,12 +47,19 @@
     text-transform: uppercase;
 }
 
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+    z-index: 2;
+}
 
 .navbar ul li::after{
     content:  ' ';
     height:  3px;
     width: 0;
-    background: #009688;
+    background: #AC7F34;
     position: absolute;
     left: 0;
     bottom: -5px;
@@ -54,8 +69,6 @@
 .navbar ul li:hover::after{
     width: 100%;
 }
-
-
 
 .content{
     width: 100%;
@@ -75,6 +88,7 @@
     margin: 20px auto;
     font-weight: 100;
     line-height: 25px;
+    font-size: 20px;
 }
 
 button{
@@ -110,4 +124,43 @@ button:hover  span{
 
 button:hover{
     border: none;
+}
+
+.time_link{
+    /* width: 100%; */
+    position:absolute;
+    top: 90%;
+    left: 8%;
+    /* transform: translateY(0%); */
+    /* text-align: center; */
+    color: #fff;
+}
+
+.time_link a{
+    text-decoration: none;
+    color:#fff;
+}
+
+.time_link i{
+    margin: 0 5px 0 5px;
+}
+
+/* responsive media query start */
+@media (max-width: 994px) {
+
+    /*menu-btn*/
+    .navbar ul li{
+        list-style: none;
+        display: none;
+        margin: 0  20px;
+        position: relative;
+    } 
+
+    .menu-btn{
+        color: #fff;
+        font-size: 23px;
+        cursor: pointer;
+        display: block;
+        z-index: 2;
+    }
 }
