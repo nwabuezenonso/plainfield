@@ -47,14 +47,38 @@ html{
     text-transform: uppercase;
 }
 
-.menu-btn{
-    color: #fff;
-    font-size: 23px;
-    cursor: pointer;
+/*styling the menu button*/
+.menu-btn {
     display: none;
-    z-index: 2;
+    cursor: pointer;
+}
+  
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
 }
 
+/* Rotate first bar */
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+    opacity: 0;
+}
+  
+  /* Rotate last bar */
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+/*Back to navbar styling*/
 .navbar ul li::after{
     content:  ' ';
     height:  3px;
@@ -145,14 +169,308 @@ button:hover{
     margin: 0 5px 0 5px;
 }
 
+/*MESSAGES SECTION*/
+.message,.service,.meet_out_lead,.footer{
+    margin: 2% 5% 2% 5%;
+}
+
+.video_part{
+    border-top: 7px solid #AC7F34;
+}
+
+/*SERVICES SECTION*/
+h5{
+    font-weight: normal;
+    font-size: 40px;
+}
+
+h1{
+    font-weight: bold;
+    font-size: 80px;
+}
+/*faq section inside services*/
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion_bg{
+    background-color: #4D0074;
+}
+.accordion {
+    background-color: #4D0074;
+    color: #fff;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  /* .active, .accordion:hover {
+    background-color: #ccc;
+  } */
+  
+  /* Style the accordion panel. Note: hidden by default */
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    outline: none;
+}
+
+.accordion:focus{
+    outline: none;
+}
+
+/*Meet our lead and its button*/
+.button {
+    border-radius: 4px;
+    background-color: #4D0074;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    /* font-size: 28px; */
+    padding: 15px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+/* .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+} */
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover {
+    padding-right: 25px;
+    background: transparent;
+    border: 2px solid #AC7F34;
+    color: #AC7F34;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+/*footer*/
+/* .footers{
+    background-color: #4D0074;
+    color: #fff;
+    margin: 0;
+    height: 300px;
+} */
+
+.content1{
+    position: relative;
+    margin: 130px auto;
+    text-align: center;
+    padding: 0 20px;
+  }
+  .content1 .text{
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #202020;
+  }
+  .content1 .p{
+    font-size: 2.1875rem;
+    font-weight: 600;
+    color: #202020;
+  }
+  footer{
+    /* position: fixed;
+    bottom: 0px; */
+    width: 100%;
+    background: #111;
+  }
+  .main-content{
+    display: flex;
+  }
+  .main-content .box{
+    flex-basis: 50%;
+    padding: 10px 20px;
+  }
+  .box h2{
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .box .content{
+    margin: 20px 0 0 0;
+    position: relative;
+  }
+  .box .content:before{
+    position: absolute;
+    content: '';
+    top: -10px;
+    height: 2px;
+    width: 100%;
+    background: #1a1a1a;
+  }
+  .box .content:after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 15%;
+    background: #f12020;
+    top: -10px;
+  }
+  .left .content p{
+    text-align: justify;
+  }
+  .left .content .social{
+    margin: 20px 0 0 0;
+  }
+  .left .content .social a{
+    padding: 0 2px;
+  }
+  .left .content .social a span{
+    height: 40px;
+    width: 40px;
+    background: #1a1a1a;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  .left .content .social a span:hover{
+    background: #f12020;
+  }
+  .center .content .fas{
+    font-size: 1.4375rem;
+    background: #1a1a1a;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .center .content .fas:hover{
+    background: #f12020;
+  }
+  .center .content .text{
+    font-size: 1.0625rem;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+  .center .content .phone{
+    margin: 15px 0;
+  }
+  .right form .text{
+    font-size: 1.0625rem;
+    margin-bottom: 2px;
+    color: #656565;
+  }
+  .right form .msg{
+    margin-top: 10px;
+  }
+  .right form input, .right form textarea{
+    width: 100%;
+    font-size: 1.0625rem;
+    background: #151515;
+    padding-left: 10px;
+    border: 1px solid #222222;
+  }
+  .right form input:focus,
+  .right form textarea:focus{
+    outline-color: #3498db;
+  }
+  .right form input{
+    height: 35px;
+  }
+  .right form .btn{
+    margin-top: 10px;
+  }
+  .right form .btn button{
+    height: 40px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #f12020;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+  }
+  .right form .btn button:hover{
+    background: #000;
+  }
+  .bottom center{
+    padding: 5px;
+    font-size: 0.9375rem;
+    background: #151515;
+  }
+  .bottom center span{
+    color: #656565;
+  }
+  .bottom center a{
+    color: #f12020;
+    text-decoration: none;
+  }
+  .bottom center a:hover{
+    text-decoration: underline;
+  }
+  @media screen and (max-width: 900px) {
+    footer{
+      position: relative;
+      bottom: 0px;
+    }
+    .main-content{
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    .main-content .box{
+      margin: 5px 0;
+    }
+  }
 /* responsive media query start */
 @media (max-width: 994px) {
 
+    .logo{
+        width: 150px;
+        cursor: pointer;
+    }
+
+    .navbar ul{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: 0;
+        top: -100%;
+        background: #4D0074;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+        z-index: 2;
+    }
+    .navbar ul li:hover::after{
+      display: none;
+    }
     /*menu-btn*/
+    .navbar ul.active{
+        top: 0;
+    }
+
     .navbar ul li{
         list-style: none;
-        display: none;
-        margin: 0  20px;
+        display: block;
+        margin: 50px  auto;
         position: relative;
     } 
 
@@ -162,5 +480,8 @@ button:hover{
         cursor: pointer;
         display: block;
         z-index: 2;
+        /* position: absolute;
+        top: 20%;
+        right: 10%; */
     }
 }
