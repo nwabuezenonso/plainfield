@@ -21,10 +21,6 @@ app.use(express.static('public'));
 // app.set('view engine', 'ejs');
 
 //database connection
-// const dbURI = 'mongodb+srv://ExpenseTracker:trackyourexpensenow@cluster0.mofh6.mongodb.net/Tracker?retryWrites=true&w=majority'
-// mongoose.connect(dbURI, {useNewUrlParser: true , useUnifiedTopology: true})
-//   .then((result) => console.log('data running'))
-//   .catch((err) => console.log(err));
 
 //routes
 // app.get('*', checkUser)
