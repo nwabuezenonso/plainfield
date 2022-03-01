@@ -1,0 +1,42 @@
+.footers{
+    background-color: #4D0074;
+    color: #fff;
+    height: auto;
+}
+
+/* footer{
+    padding: 10px;
+}
+
+.footer h2{
+    margin-left: 50px;
+    font-size: 18px;
+    text-transform: uppercase;
+} */
+
+/* .footer h2::after{
+    content:  ' ';
+    height:  3px;
+    width: 0;
+    background: #AC7F34;
+    position: absolute;
+    left: 50px;
+    bottom: 45px;
+    transition: 0.5s;
+} */
+
+/* .footer h2:hover::after{
+    width: 30%;
+}
+
+.myaddress{
+    margin: 10px 0 5px 0;
+}
+
+.myaddress i{
+    margin-left: 60px;
+}
+
+.myaddress p{
+    margin-left: 10px;
+} */
