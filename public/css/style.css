@@ -215,7 +215,7 @@ h1{
         height: 100vh;
         width: 100%;
         left: 0;
-        top: -100%;
+        top: -100vh;
         background: #4D0074;
         text-align: center;
         padding-top: 80px;
