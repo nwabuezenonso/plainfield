@@ -32,6 +32,10 @@ app.get('/about', (req, res)=>{
   res.sendFile('./public/about.html', {root: __dirname})
 })
 
+app.get('/event', (req, res)=>{
+  res.sendFile('./public/event.html', {root: __dirname})
+})
+
 // app.post('/signup', async(req, res)=>{
 //   const { email, password } = req.body;
 

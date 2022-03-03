@@ -16,7 +16,7 @@ html{
     background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75) ), url('../img/Building.jpg') ;
     /* background: linear-gradient(90deg, rgba(2,0,36,1) 7%, rgba(0,0,0,1) 27%, rgba(77,0,116,1) 100%); */
     background-size: cover;
-    background-position: center;
+    background-position: center
 }
 
 .navbar{
@@ -30,7 +30,7 @@ html{
 
 .logo{
     /* margin-top: 10px; */
-    width: 90px;
+    width: 150px;
     cursor: pointer;
 }
 
@@ -206,6 +206,7 @@ h1{
 /*Theology*/
 .theology p, .theology li{
     text-align: justify;
+    text-decoration: dotted;
 }
 
 /*faq*/

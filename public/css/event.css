@@ -1,74 +1,322 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+/*HEADER*/
+
+.banner{
+  width: 100%;
+  height: 50vh;
+  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75) ), url('../img/event0.jpg') ;
+  /* background: linear-gradient(90deg, rgba(2,0,36,1) 7%, rgba(0,0,0,1) 27%, rgba(77,0,116,1) 100%); */
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar{
+  width: 85%;
+  margin: auto;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+}
+
+.logo{
+  /* margin-top: 10px; */
+  width: 150px;
+  cursor: pointer;
+}
+
+.navbar ul li{
+  list-style: none;
+  display: inline-block;
+  margin: 0  20px;
+  position: relative;
+} 
+
+.navbar ul li a{
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/*styling the menu button*/
+.menu-btn {
+  display: none;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+  transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+  transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+/*Back to navbar styling*/
+.navbar ul li::after{
+  content:  ' ';
+  height:  3px;
+  width: 0;
+  background: #AC7F34;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.5s;
+}
+
+.navbar ul li:hover::after{
+  width: 100%;
+}
+
+.content{
+  width: 100%;
+  position:absolute;
+  top: 30%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #fff;
+}
+
+.content h1{
+  font-size: 70px;
+  margin-top: 50px;
+}
+
+.content p{
+  margin: 10px auto;
+  font-weight: 100;
+  line-height: 25px;
+  font-size: 20px;
+}
+
+
+/*special event*/
 .blog-home2 {
-    font-family: "Montserrat", sans-serif;
-    color: #8d97ad;
-    /* font-weight: 300; */
+  font-family: "Montserrat", sans-serif;
+  color: #8d97ad;
+  font-weight: 300;
+}
+
+.blog-home2 h1,
+.blog-home2 h2,
+.blog-home2 h3,
+.blog-home2 h4,
+.blog-home2 h5,
+.blog-home2 h6 {
+  color: #3e4555;
+}
+
+.blog-home2 .font-weight-medium {
+  font-weight: 500;
+}
+
+.blog-home2 .bg-light {
+  background-color: #f4f8fa !important;
+}
+
+.blog-home2 .subtitle {
+  color: #8d97ad;
+  line-height: 24px;
+}
+
+.blog-home2 .text-themecolor {
+  color: #AC7F34;
+}
+
+.blog-home2 h5 {
+  line-height: 22px;
+  font-size: 18px;
+}
+
+.blog-home2 a.link {
+  color: #3e4555;
+}
+
+.blog-home2 a.link:hover {
+  color: #AC7F34;
+}
+
+.blog-home2 .on-hover {
+  -webkit-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+.blog-home2 .on-hover:hover {
+  -webkit-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
+.blog-home2 .date-pos {
+  right: 10px;
+  top: 10px;
+}
+
+.blog-home2 .date-pos span {
+  font-size: 30px;
+  line-height: 30px;
+}
+.blog-home2 .bg-info-gradiant {
+  background: #4D0074;
+  background: -webkit-linear-gradient(legacy-direction(to right), #4D0074 0%, #56077e 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#4D0074), to(#4D0074));
+  background: -webkit-linear-gradient(left, #4D0074 0%, #4D0074 100%);
+  background: -o-linear-gradient(left, #4D0074 0%, #4D0074 100%);
+  background: linear-gradient(to right, #4D0074 0%, #4D0074 100%);
+}
+
+.card_img{
+  height: 300px;
+}
+/* End card section */
+
+/*weekly event*/
+/*Timeline*/
+.timeline_area {
+  position: relative;
+  z-index: 1;
+}
+.timelin{
+  /* background-color: #f5f5f5; */
+  padding: 10px;
+}
+.single-timeline-area {
+  position: relative;
+  z-index: 1;
+  padding-left: 180px;
+}
+@media only screen and (max-width: 575px) {
+  .single-timeline-area {
+      padding-left: 100px;
   }
-  
-  .blog-home2 h1,
-  .blog-home2 h2,
-  .blog-home2 h3,
-  .blog-home2 h4,
-  .blog-home2 h5,
-  .blog-home2 h6 {
-    color: #3e4555;
+}
+.single-timeline-area .timeline-date {
+  position: absolute;
+  width: 180px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding-right: 60px;
+}
+@media only screen and (max-width: 575px) {
+  .single-timeline-area .timeline-date {
+      width: 100px;
   }
-  
-  .blog-home2 .font-weight-medium {
-    font-weight: 500;
+}
+.single-timeline-area .timeline-date::after {
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  content: "";
+  background-color: #ebebeb;
+  top: 0;
+  right: 30px;
+  z-index: 1;
+}
+.single-timeline-area .timeline-date::before {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: #AC7F34;
+  content: "";
+  top: 50%;
+  right: 26px;
+  z-index: 5;
+  margin-top: -5.5px;
+}
+.single-timeline-area .timeline-date p {
+  margin-bottom: 0;
+  color: #020710;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.single-timeline-area .single-timeline-content {
+  position: relative;
+  z-index: 1;
+  padding: 30px 30px 25px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  -webkit-box-shadow: 0 0.25rem 1rem 0 rgba(47, 91, 234, 0.125);
+  box-shadow: 0 0.25rem 1rem 0 rgba(47, 91, 234, 0.125);
+  border: 1px solid #ebebeb;
+}
+@media only screen and (max-width: 575px) {
+  .single-timeline-area .single-timeline-content {
+      padding: 20px;
   }
-  
-  .blog-home2 .bg-light {
-    background-color: #f4f8fa !important;
-  }
-  
-  .blog-home2 .subtitle {
-    color: #8d97ad;
-    line-height: 24px;
-  }
-  
-  .blog-home2 .text-themecolor {
-    color: #AC7F34;
-  }
-  
-  .blog-home2 h5 {
-    line-height: 22px;
-    font-size: 18px;
-  }
-  
-  .blog-home2 a.link {
-    color: #3e4555;
-  }
-  
-  .blog-home2 a.link:hover {
-    color: #AC7F34;
-  }
-  
-  .blog-home2 .on-hover {
-    -webkit-transition: 0.2s ease-in;
-    -o-transition: 0.2s ease-in;
-    transition: 0.2s ease-in;
-  }
-  
-  .blog-home2 .on-hover:hover {
-    -webkit-transform: translateY(-10px);
-    -ms-transform: translateY(-10px);
-    transform: translateY(-10px);
-  }
-  
-  .blog-home2 .date-pos {
-    right: 10px;
-    top: 10px;
-  }
-  
-  .blog-home2 .date-pos span {
-    font-size: 30px;
-    line-height: 30px;
-  }
-  .blog-home2 .bg-info-gradiant {
-      background: #4D0074;
-      background: -webkit-linear-gradient(legacy-direction(to right), #4D0074 0%, #4D0074 100%);
-      background: -webkit-gradient(linear, left top, right top, from(#4D0074), to(#4D0074));
-      background: -webkit-linear-gradient(left, #4D0074 0%, #4D0074 100%);
-      background: -o-linear-gradient(left, #4D0074 0%, #4D0074 100%);
-      background: linear-gradient(to right, #4D0074 0%, #4D0074 100%);
-  }
+}
+.single-timeline-area .single-timeline-content .timeline-icon {
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  width: 30px;
+  height: 30px;
+  background-color: #AC7F34;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 30px;
+  flex: 0 0 30px;
+  text-align: center;
+  max-width: 30px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.single-timeline-area .single-timeline-content .timeline-icon i {
+  color: #ffffff;
+  line-height: 30px;
+}
+.single-timeline-area .single-timeline-content .timeline-text h6 {
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+.single-timeline-area .single-timeline-content .timeline-text p {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+.single-timeline-area .single-timeline-content:hover .timeline-icon,
+.single-timeline-area .single-timeline-content:focus .timeline-icon {
+  background-color: #4D0074;
+}
+.single-timeline-area .single-timeline-content:hover .timeline-text h6,
+.single-timeline-area .single-timeline-content:focus .timeline-text h6 {
+  color: #AC7F34;
+}
