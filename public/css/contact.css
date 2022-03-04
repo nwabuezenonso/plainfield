@@ -2,84 +2,85 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-}
-
-html{
+  }
+  
+  html{
     scroll-behavior: smooth;
-}
-
-/*HEADER*/
-
-.banner{
+  }
+  
+  /*HEADER*/
+  
+  .banner{
     width: 100%;
     height: 50vh;
-    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75) ), url('../img/Building.jpg') ;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75) ), url('../img/contact.jpg') ;
     /* background: linear-gradient(90deg, rgba(2,0,36,1) 7%, rgba(0,0,0,1) 27%, rgba(77,0,116,1) 100%); */
     background-size: cover;
-    background-position: center
-}
-
-.navbar{
+    background-position: center -90vh;
+    /* background-repeat: no-repeat; */
+  }
+  
+  .navbar{
     width: 85%;
     margin: auto;
     padding: 30px 0;
     display: flex;
     align-items: center;
     justify-content:space-between;
-}
-
-.logo{
+  }
+  
+  .logo{
     /* margin-top: 10px; */
     width: 150px;
     cursor: pointer;
-}
-
-.navbar ul li{
+  }
+  
+  .navbar ul li{
     list-style: none;
     display: inline-block;
     margin: 0  20px;
     position: relative;
-} 
-
-.navbar ul li a{
+  } 
+  
+  .navbar ul li a{
     text-decoration: none;
     color: #fff;
     text-transform: uppercase;
-}
-
-/*styling the menu button*/
-.menu-btn {
+  }
+  
+  /*styling the menu button*/
+  .menu-btn {
     display: none;
     cursor: pointer;
-}
+  }
   
-.bar1, .bar2, .bar3 {
+  .bar1, .bar2, .bar3 {
     width: 35px;
     height: 5px;
     background-color: #fff;
     margin: 6px 0;
     transition: 0.4s;
-}
-
-/* Rotate first bar */
-.change .bar1 {
+  }
+  
+  /* Rotate first bar */
+  .change .bar1 {
     -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
     transform: rotate(-45deg) translate(-9px, 6px) ;
-}
-
-/* Fade out the second bar */
-.change .bar2 {
+  }
+  
+  /* Fade out the second bar */
+  .change .bar2 {
     opacity: 0;
-}
+  }
   
   /* Rotate last bar */
-.change .bar3 {
+  .change .bar3 {
     -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
     transform: rotate(45deg) translate(-8px, -8px) ;
-}
-
-/*Back to navbar styling*/
-.navbar ul li::after{
+  }
+  
+  /*Back to navbar styling*/
+  .navbar ul li::after{
     content:  ' ';
     height:  3px;
     width: 0;
@@ -88,152 +89,109 @@ html{
     left: 0;
     bottom: -5px;
     transition: 0.5s;
-}
-
-.navbar ul li:hover::after{
+  }
+  
+  .navbar ul li:hover::after{
     width: 100%;
-}
-
-.content{
+  }
+  
+  .content{
     width: 100%;
     position:absolute;
     top: 30%;
     transform: translateY(-50%);
     text-align: center;
     color: #fff;
-}
-
-.content h1{
+  }
+  
+  .content h1{
     font-size: 70px;
     margin-top: 50px;
-}
-
-.content p{
+  }
+  
+  .content p{
     margin: 10px auto;
     font-weight: 100;
     line-height: 25px;
     font-size: 20px;
-}
-.time_link{
-    /* width: 100%; */
-    position:absolute;
-    top: 90%;
-    left: 8%;
-    /* transform: translateY(0%); */
-    /* text-align: center; */
-    color: #fff;
-}
-
-.time_link a{
-    text-decoration: none;
-    color:#fff;
-}
-
-.time_link i{
-    margin: 0 5px 0 5px;
-}
-
-.meet_out_lead, .faq{
-    margin: 2% 5% 2% 5%;
-}
-
-.meet_out_lead p{
-    text-align: justify;
-}
-
-h5{
-    font-weight: normal;
-    font-size: 18px;
-    color: #AC7F34;
-}
-
-h1{
-    font-weight: bold;
-    font-size: 80px;
-}
-
-/*Meet our lead and its button*/
-.button {
-    border-radius: 4px;
-    background-color: #4D0074;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    /* font-size: 28px; */
-    padding: 15px;
-    width: 200px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-}
+  }
   
-
-.button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
+  
+  /*contact-section*/
+  .contact_bg{
+      margin-top: 20px;
+    margin-bottom: 20px;
+  }
+.contact_text{
+    padding: 10px;
 }
 
-.button:hover {
-    padding-right: 25px;
-    background: transparent;
-    border: 2px solid #AC7F34;
-    color: #AC7F34;
-}
-
-.button:hover span:after {
-    opacity: 1;
-    right: 0;
-}
-
-
-/*church history*/
-.worship_text{
-    text-align: center;
-}
-
-/* .our_church_img{
-    background-image: url('../img/Building.jpg');
-    height: 200px;
-    background-size: cover;
-    background-position: bottom;
-    width: 300px;
-} */
-
-/*Theology*/
-.theology p, .theology li{
+.contact_text p{
     text-align: justify;
-    text-decoration: dotted;
+}
+.bg_color{
+    background-color: #4D0074;
+    /* margin-bottom: 10px; */
+    padding: 15px 0 15px 0
+}
+.msg-form {
+    background-color: white;
+    padding: 50px
 }
 
-/*faq*/
-.faq i{
-    color: #AC7F34;
+.pad-icon {
+    padding-top: 50px;
+    padding-left: 20px
 }
 
-
-/*TEAM*/
-.social-link {
-    width: 30px;
-    height: 30px;
-    border: 1px solid #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #666;
-    border-radius: 50%;
-    transition: all 0.3s;
-    font-size: 0.9rem;
-}
-
-.social-link:hover, .social-link:focus {
-    background: #ddd;
+.pad-icon a {
     text-decoration: none;
-    color: #555;
+    margin-right: 40px
 }
+
+.input-group input:focus {
+    border: 1px solid blue
+}
+
+.pad-icon a:active {
+    height: 30px;
+    width: 30px;
+    background-color: #0080ff;
+    border-radius: 100%
+}
+
+.links {
+    padding-top: 50px;
+    width: 50%
+}
+
+#bordering a:active {
+    border: 1px solid #0080ff
+}
+
+@media(min-width:568px) {
+    .container-fluid {
+        margin: 100px 30px;
+        width: 96%;
+        padding-top: 50px;
+        padding-bottom: 50px
+    }
+}
+
+@media(max-width:567px) {
+    .container-fluid {
+        margin: 10px 10px;
+        width: 94%;
+        padding-top: 20px;
+        padding-bottom: 20px
+    }
+
+    .pad {
+        padding-top: 20px
+    }
+}
+
+
 
 /* responsive media query start */
 @media (max-width: 994px) {
@@ -284,5 +242,42 @@ h1{
         font-size: 30px;
         margin: 80px 10px 0 10px;
     }
+}
+
+
+.button {
+    border-radius: 4px;
+    background-color: #4D0074;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    /* font-size: 28px; */
+    padding: 15px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+  
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover {
+    padding-right: 25px;
+    background: transparent;
+    border: 2px solid #AC7F34;
+    color: #AC7F34;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
 }
 

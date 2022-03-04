@@ -1,0 +1,65 @@
+<%- include('./partials/header.ejs') %>
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="stylesheet" href="./css/footer.css">
+</head>
+<body>
+  <section id="banner">
+      <div class="banner">
+        <%- include('./partials/nav.ejs') %>
+          <div class="content">
+              <h1>Contact us</h1>
+          </div>
+      </div>
+  </section>
+   
+
+<div class="container rounded contact_bg">
+  <div class="row px-5">
+    <div class="col-sm-6">
+      <div class="contact_text">
+        <h3 class="text-black">Hello there</h3>
+        <p class="text-black">For more enquires you can contact us with the following medium.You can fill up the form and our team will get back to you within in 24 hours</p>
+      </div>
+      <div class="links" id="bordering"> <a href="#" style="text-decoration: none;color: black;" class="btn rounded text-black p-3"><i class="fa fa-phone icon text-black pr-3"></i>631.782 4107 or 908.548.8699</a> <a href="#" style="text-decoration: none;color: black;" class="btn rounded text-black p-3"><i class="fa fa-envelope icon text-black pr-3"></i>anglicanmessiah2018@gmail.com</a> <a href="#" style="text-decoration: none;color: black;" class="btn rounded text-black p-3"><i class="fa fa-map-marker icon text-black pr-3"></i>501 Central Avenue Plainfield  New Jersey 07060</a> </div>
+      <div class="pt-lg-4 d-flex flex-row justify-content-start">
+        <div class="pad-icon"> <a style="color: black;" class="fa fa-facebook text-black" href="https://www.facebook.com/anglicanchurchofthemessiah/"></a> </div>
+        <div class="pad-icon"> <a style="color: black;" class="fa fa-twitter text-black" href="https://twitter.com/AnglicanChurch6?t=I2RpF63kqoZLB7x5uyz01Q&s=09"></a> </div>
+      </div>
+    </div>
+    <div class="col-sm-6 pad">
+      <form class="rounded msg-form">
+        <div class="form-group"> <label for="name" class="h6">Your Name</label>
+          <div class="input-group border rounded">
+            <div class="input-group-addon">
+              <!-- <i class="fa fa-user-o text-primary"></i> -->
+            </div> <input type="text" placeholder="Name" class="form-control border-0">
+          </div>
+        </div>
+        <div class="form-group"> <label for="name" class="h6">Email</label>
+          <div class="input-group border rounded">
+            <div class="input-group-addon">  </div> <input type="text" placeholder="Email" class="form-control border-0">
+          </div>
+        </div>
+        <div class="form-group"> <label for="msg" class="h6">Message</label> <textarea name="message" id="msgus" cols="10" rows="5" class="form-control bg-light" placeholder="Message"></textarea> </div>
+        <div class="form-group d-flex justify-content-end"> <button class="button">LEARN MORE</button></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+  <!--Google map-->
+  <section class="contact_map">
+    <div class="contact_tag">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3028.721592108486!2d-74.42392788499419!3d40.61396585154485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3b9f6c9c75c97%3A0x76077a356323e6c!2s501%20Central%20Ave%2C%20Plainfield%2C%20NJ%2007060%2C%20USA!5e0!3m2!1sen!2sng!4v1646387960341!5m2!1sen!2sng" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!--Google Maps-->
+   
+<%- include('./partials/footer.ejs') %>

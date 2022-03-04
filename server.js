@@ -17,23 +17,27 @@ app.use(express.static('public'));
 // app.use(express.urlencoded({extended: true}))
 // app.use(cookieParser());
 
-// view engine
-// app.set('view engine', 'ejs');
+//view engine
+app.set('view engine', 'ejs');
 
 //database connection
 
 //routes
 // app.get('*', checkUser)
 app.get('/', (req, res)=>{
-  res.sendFile('./public/index.html', {root: __dirname})
+  res.render('index')
 })
 
 app.get('/about', (req, res)=>{
-  res.sendFile('./public/about.html', {root: __dirname})
+  res.render('about')
 })
 
 app.get('/event', (req, res)=>{
-  res.sendFile('./public/event.html', {root: __dirname})
+  res.render('event')
+})
+
+app.get('/contact', (req, res)=>{
+  res.render('contact')
 })
 
 // app.post('/signup', async(req, res)=>{

@@ -1,0 +1,136 @@
+<%- include('./partials/header.ejs') %>
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/footer.css">
+</head>
+<body>
+  <section id="banner">
+    <div class="banner">
+      <%- include('./partials/nav.ejs') %>
+      <div class="content">
+        <h1 class="wow fadeInDown" data-wow-delay="0.2s">THE ANGLICAN CHURCH OF  THE MESSIAH</h1>
+        <p class="wow fadeInDown"   data-wow-delay="0.3s">Come join us at the Church of the Messiah where Jesus the Messiah will meet your needs.</p>
+      </div>
+      <div class="time_link">
+        <p>JOIN US ON SUNDAY AT 11:00 AM  <a href="https://www.facebook.com/anglicanchurchofthemessiah/"><i class="fa fa-facebook" aria-hidden="true"></i></a><a href="https://twitter.com/AnglicanChurch6?t=I2RpF63kqoZLB7x5uyz01Q&s=09"><i class="fa fa-twitter" aria-hidden="true"></i></a></p>
+      </div>
+    </div>
+  </section>
+  <%- include('./partials/specialevent.ejs') %>
+  <%- include('./partials/weeklyevent.ejs') %>
+  <section class="mission_vission">
+    <div class="container bg-purple">
+      <div class="row">
+        <!-- <div class="col-sm-4">
+          
+        </div> -->
+        <div class="col">
+          <h2>Our Mission and Vision </h2><br>
+          <p><strong>MISSION:</strong> Welcoming everybody of every background into an ever deepening and personal relationship with Jesus Christ our Messiah</p><br>
+          <p><strong>VISION:</strong> Continuously remain a vibrant community of Christian faith and worship serving, educating, and offering fellowship and support to all who seek Jesus Christ as the Messiah </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Meet our lead-->
+  
+  <section class="meet_our_leads">
+    <div class="meet_out_lead">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <h5>MEET OUR LEADER</h5>
+            <h1>PRIEST</h1>
+            <p>The Venerable Dr. Gideon Uzomechina is a spiritual man whose love for the Lord Jesus Christ and his mission to the world has no boundaries. He is an ordained pastor of the Anglican Communion (Anglo-Catholic Church) since 2002 following his seminary training. Being very passionate in his pastoral responsibilities and actively engaged in the community, Gideon brings a message of Christ’s love and inclusiveness to his members and to the needy and unreached. Many who have heard him deliver a sermon for the first time, concur that he has been blessed with the gifts of preaching and teaching the Word and Sacrament. His spiritual knowledge was enhanced by studying the life, time, and ministry of Jesus Christ in the land of Palestine in ecumenical and interfaith settings at St. Georges College and Hebrew University of Jerusalem, Mount Scopus, Jerusalem, Israel in 2008 His studies in Israel also included many fact-finding missions to places such as Egypt, Jordan, Syria, Golan Heights and Istanbul, Turkey.</p>
+            <p><i class="fa fa-facebook"></i> <i class="fa fa-twitter"></i></p>
+            <button class="button">LEARN MORE</button>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <img class="rounded-circle" src="./img/priest1.jpg"  width="90%" height="90%" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--ministries-->
+  <div class="blog-home2 py-5">
+    <div class="container">
+      <!-- Row  -->
+      <div class="row justify-content-center">
+        <!-- Column -->
+        <div class="col-md-8 text-center">
+          <h3 class="my-3">Our Ministries</h3>
+          <h6 class="subtitle font-weight-normal">Join our growing ministry blessed with wonderful pastors </h6>
+        </div>
+        <!-- Column -->
+        <!-- Column -->
+      </div>
+      <div class="row mt-4">
+        <!-- Column -->
+        <div class="col-md-4 on-hover wow fadeIn"  data-wow-delay="0.1s">
+          <div class="card border-0 mb-4">
+            <img class="card_img card-img-top" src="./img/children ministry.jpg" alt="wrappixel kit">
+            <h5 class="font-weight-medium mt-3">Anglican Children Ministry</h5>
+            <p class="mt-3">Our Anglican children ministry provides adolescents aged 5-12 with the resources and mentorship they need to develop a personal, lasting relationship with Jesus Christ</p>
+            <a href="https://en.wikipedia.org/wiki/Septuagesima" class="text-decoration-none linking text-themecolor mt-2">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Column -->
+        <div class="col-md-4 on-hover wow fadeIn"  data-wow-delay="0.2s">
+          <div class="card border-0 mb-4">
+           <img class="card_img card-img-top" src="./img/youth.jpg" alt="wrappixel kit">
+           <h5 class="font-weight-medium mt-3">Anglican Youth Ministry</h5>
+            <p class="mt-3">Our Anglican children ministry provides adolescents aged 13-19 with the resources and mentorship they need to develop a personal, lasting relationship with Jesus Christ</p>
+            <a href="#" class="text-decoration-none linking text-themecolor mt-2">Learn More</a>
+          </div>
+        </div>
+        <!-- Column -->
+        <div class="col-md-4 on-hover wow fadeIn"  data-wow-delay="0.3s">
+          <div class="card border-0 mb-4">
+           <img class="card_img card-img-top" src="./img/adult_img.jpg" alt="wrappixel kit">
+            <h5 class="font-weight-medium mt-3">Anglican Adult Ministry</h5>
+            <p class="mt-3">Our Anglican children ministry provides adolescents aged 20 and above with the resources and mentorship they need to develop a personal, lasting relationship with Jesus Christ </p>
+            <a href="#" class="text-decoration-none linking text-themecolor mt-2">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Contact-->
+  <section class="contact_us">
+    <div class="container contact-form">
+      <form method="post">
+        <h3 style="color: #fff;">Drop Us a Message</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" name="txtName" class="form-control" placeholder="Your Name" value="" />
+            </div>
+            <div class="form-group">
+              <input type="text" name="txtEmail" class="form-control" placeholder="Your Email " value="" />
+            </div>
+            <div class="form-group">
+              <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number" value="" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <textarea name="txtMsg" class="form-control" placeholder="Your Message" style="width: 100%; height: 150px;"></textarea>
+            </div>
+            <div class="form-group">
+              <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+          </div>
+          </div>
+        </div>
+      </form>
+  </div>
+  </section>
+
+  <%- include('./partials/team.ejs') %>  
+
+  <%- include('./partials/footer.ejs') %> 
+  
