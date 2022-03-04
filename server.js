@@ -40,6 +40,13 @@ app.get('/contact', (req, res)=>{
   res.render('contact')
 })
 
+app.get('/signup', (req, res)=>{
+  res.render('signup')
+})
+
+app.get('/login', (req, res) => {
+  res.render('login')
+})
 // app.post('/signup', async(req, res)=>{
 //   const { email, password } = req.body;
 

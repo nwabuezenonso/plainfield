@@ -133,8 +133,12 @@ html{
     margin: 0 5px 0 5px;
 }
 
-.meet_out_lead, .faq{
+.meet_out_lead, .faq,.mission_vission{
     margin: 2% 5% 2% 5%;
+}
+.mission_vission{
+    margin-bottom: 0;
+    line-height: 0.5;
 }
 
 .meet_out_lead p{
