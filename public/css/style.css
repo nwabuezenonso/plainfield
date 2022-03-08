@@ -215,7 +215,7 @@ h1{
 @media (max-width: 994px) {
 
     .logo{
-        width: 150px;
+        width: 80px;
         cursor: pointer;
     }
 
@@ -264,7 +264,7 @@ h1{
         /* width: 100%; */
         position:absolute;
         top: 66%;
-        right: 25%;
+        right: 24%;
         /* transform: translateY(0%); */
         /* text-align: center; */
         color: #fff;
