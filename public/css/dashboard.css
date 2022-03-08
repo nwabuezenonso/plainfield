@@ -1,0 +1,160 @@
+:root{
+    --main-color: #4D0074;
+    --color-dark: #1d2231;
+    --text-grey: #8390A2;
+}
+
+*{
+    font-family:  'Open Sans';
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+
+button {
+    border-radius: 4px;
+    background-color: #4D0074;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    /* font-size: 28px; */
+    padding: 15px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 15px 0 0 0;
+}
+  
+
+button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+button:hover {
+    padding-right: 25px;
+    background: transparent;
+    border: 2px solid #AC7F34;
+    color: #AC7F34;
+}
+
+button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+#sidebar-toggle{
+    display: none;
+}
+.sidebar{
+    height: 100%;
+    width: 180px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background: var(--main-color);
+    color: #fff;
+    overflow-y: auto;   
+    transition: width  500ms ;
+}
+
+.sidebar-header{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0rem 1rem;
+    transition: width  900ms ;
+}
+
+.sidebar-menu{
+    padding-top: 5rem;
+}
+
+.sidebar li{
+    margin-bottom: 1rem;
+}
+
+.sidebar a{
+    color: #fff;
+}
+
+.sidebar a span:last-child{
+    padding-left: 1rem;
+}
+
+#sidebar-toggle:checked ~ .sidebar{
+    width: 60px;
+}
+
+#sidebar-toggle:checked ~.sidebar .sidebar-header h3 span,
+#sidebar-toggle:checked ~.sidebar li span:last-child{
+    display: none;
+}
+
+#sidebar-toggle:checked ~.sidebar .sidebar-header ,
+#sidebar-toggle:checked ~.sidebar li {
+    display: flex;
+    justify-content: center;
+} 
+
+#sidebar-toggle:checked ~ .main-content{
+    margin-left: 60px;
+}
+
+#sidebar-toggle:checked ~ .main-content header{
+    left: 60px;
+}
+
+.main-content{
+    position: relative;
+    margin-left: 240px;
+    transition: margin-left 500ms;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background: #fff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    border-bottom: 1px solid #ccc;
+    transition: left 500ms;
+}
+
+
+main{
+    margin-top: 60px;
+    background: #fff;
+    min-height: 90vh;
+    padding: 1rem;
+}
+
+.dash-cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap:  5rem;
+}
+
+.card-single{
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2) ;
+}
+
+.card-body{
+    padding:1rem;
+    display: flex;
+    align-items: center;
+}

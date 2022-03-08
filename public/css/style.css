@@ -13,7 +13,7 @@ html{
 .banner{
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75) ), url('../img/Building.jpg') ;
+    background-image: linear-gradient(rgba(77, 0, 116, 0.75), rgba(77, 0, 115, 0.75) ), url('../img/Building.jpg') ;
     /* background: linear-gradient(90deg, rgba(2,0,36,1) 7%, rgba(0,0,0,1) 27%, rgba(77,0,116,1) 100%); */
     background-size: cover;
     background-position: center;
@@ -124,6 +124,15 @@ html{
     color: #fff;
 }
 
+.time_btn{
+      /* width: 100%; */
+      position:absolute;
+      top: 87%;
+      right: 8%;
+      /* transform: translateY(0%); */
+      /* text-align: center; */
+      color: #fff;
+}
 .time_link a{
     text-decoration: none;
     color:#fff;
@@ -459,6 +468,20 @@ h1{
 
 .card_img{
     height: 300px;
+}
+
+.Baptized{
+    /* background-color: ; */
+    background-image:  linear-gradient(rgba(77, 0, 116, 0.75), rgba(77, 0, 115, 0.75) ), url('../img/kids.jpg') ;
+    height: 50vh;
+    text-align: center;
+    padding-top: 130px;
+}
+
+.baptize_text{
+    text-align: center;
+    font-size: 50px;
+    color: #fff;
 }
 
 /*contact*/

@@ -25,27 +25,69 @@ app.set('view engine', 'ejs');
 //routes
 // app.get('*', checkUser)
 app.get('/', (req, res)=>{
-  res.render('index')
+  res.render('index', {
+    title: 'Home'
+  })
 })
 
 app.get('/about', (req, res)=>{
-  res.render('about')
+  res.render('about', {
+    title: 'About us'
+  })
 })
 
 app.get('/event', (req, res)=>{
-  res.render('event')
+  res.render('event', {
+    title: 'Event'
+  })
 })
 
 app.get('/contact', (req, res)=>{
-  res.render('contact')
+  res.render('contact', {
+    title: 'Contact us'
+  })
+})
+
+app.get('/baptismForm', (req, res)=>{
+  res.render('baptismForm', {
+    title: 'BaptiseForm'
+  })
 })
 
 app.get('/signup', (req, res)=>{
-  res.render('signup')
+  res.render('signup', {
+    title: 'Signup'
+  })
 })
 
 app.get('/login', (req, res) => {
-  res.render('login')
+  res.render('login', {
+    title: 'Log in'
+  })
+})
+
+app.get('/dashboard', (req, res) => {
+  res.render('dashboard', {
+    title: 'Dashboard'
+  })
+})
+
+app.get('/membership', (req, res) => {
+  res.render('membership', {
+    title: 'Membership'
+  })
+})
+
+app.get('/baptism', (req, res) => {
+  res.render('baptism', {
+    title: 'Baptism'
+  })
+})
+
+app.get('/form', (req, res) => {
+  res.render('form', {
+    title: 'form'
+  })
 })
 // app.post('/signup', async(req, res)=>{
 //   const { email, password } = req.body;

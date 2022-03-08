@@ -13,10 +13,11 @@
   .banner{
     width: 100%;
     height: 50vh;
-    background-image: linear-gradient(rgba(77, 0, 116, 0.75), rgba(77, 0, 115, 0.75) ), url('../img/contact.jpg') ;
+    background-image: linear-gradient(rgba(77, 0, 116, 0.75), rgba(77, 0, 115, 0.75) ), url('../img/kids.jpg') ;
+    background-repeat: no-repeat;
     /* background: linear-gradient(90deg, rgba(2,0,36,1) 7%, rgba(0,0,0,1) 27%, rgba(77,0,116,1) 100%); */
     background-size: cover;
-    background-position: center -90vh;
+    background-position: center 0px;
     /* background-repeat: no-repeat; */
   }
   
@@ -108,6 +109,20 @@
     font-size: 70px;
     margin-top: 50px;
   }
+
+  h5{
+    font-weight: normal;
+    font-size: 18px;
+    color: #AC7F34;
+}
+
+h1{
+    font-weight: bold;
+    font-size: 50px;
+}
+form{
+    margin: 10px 0 10px 0;
+}
   
   .content p{
     margin: 10px auto;
