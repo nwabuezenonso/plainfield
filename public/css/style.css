@@ -260,6 +260,15 @@ h1{
         font-size: 30px;
         margin: 80px 10px 0 10px;
     }
+    .time_btn{
+        /* width: 100%; */
+        position:absolute;
+        top: 65%;
+        right: 25%;
+        /* transform: translateY(0%); */
+        /* text-align: center; */
+        color: #fff;
+  }
 }
 
 /*Timeline*/
