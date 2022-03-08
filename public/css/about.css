@@ -138,7 +138,7 @@ html{
 }
 .mission_vission{
     margin-bottom: 0;
-    line-height: 1;
+    /* line-height: 1; */
 }
 
 .meet_out_lead p{
@@ -243,7 +243,7 @@ h1{
 @media (max-width: 994px) {
 
     .logo{
-        width: 150px;
+        width: 80px;
         cursor: pointer;
     }
 
