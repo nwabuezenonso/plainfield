@@ -486,11 +486,12 @@ h1{
 
 /*contact*/
 .contact_us{
-    background-color: #4D0074
+    background-image: linear-gradient(rgba(77, 0, 116, 0.75), rgba(77, 0, 115, 0.75) ), url('../img/contact.jpg') ;
+    background-position: center -400px;
 }
 
 .contact-form{
-    background: #4D0074;
+    /* background-image: linear-gradient(rgba(77, 0, 116, 0.75), rgba(77, 0, 115, 0.75) ), url('../img/Building.jpg') ; */
     /* margin-top: 10%;
     margin-bottom: 5%; */
     width: 100%;
