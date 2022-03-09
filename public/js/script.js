@@ -5,28 +5,14 @@ function myFunction(x) {
     // document.querySelector('.menu-btn i').classList.toggle("active");
 }
 
-//function for phone view navigation bar
-// document.querySelector('.menu-btn').addEventListener('click', ()=>{
-//     document.querySelector('.navbar .menu').classList.toggle("active");
-//     document.querySelector('.menu-btn i').classList.toggle("active");
-// })
+var videoPlayer = document.getElementById("videoPlayer")
+var myVideo = document.getElementById("myVideo")
 
-//Faq script
-var acc = document.getElementsByClassName("accordion");
-var i;
+function stopVideo(){
+    videoPlayer.style.display = "none"
+}
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    /* Toggle between adding and removing the "active" class,
-    to highlight the button that controls the panel */
-    this.classList.toggle("active");
-
-    /* Toggle between hiding and showing the active panel */
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
+function playVideo(file){
+    myVideo.src = file
+    videoPlayer.style.display = 'block'
 }

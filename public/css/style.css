@@ -13,10 +13,11 @@ html{
 .banner{
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(77, 0, 116, 0.75), rgba(77, 0, 115, 0.75) ), url('../img/Building.jpg') ;
+    background-image: url('../img/joel-muniz-XqXJJhK-c08-unsplash.jpg') ;
     /* background: linear-gradient(90deg, rgba(2,0,36,1) 7%, rgba(0,0,0,1) 27%, rgba(77,0,116,1) 100%); */
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 
 .navbar{
@@ -485,6 +486,19 @@ h1{
     height: 50vh;
     text-align: center;
     padding-top: 130px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.join_us_column{
+    background-image: linear-gradient(rgba(77, 0, 116, 0.75), rgba(77, 0, 115, 0.75) ), url('../img/join.jpg') ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+    text-align: center;
+    padding-top: 130px;
+    background-attachment: fixed;
 }
 
 .baptize_text{
@@ -496,7 +510,8 @@ h1{
 /*contact*/
 .contact_us{
     background-image: linear-gradient(rgba(77, 0, 116, 0.75), rgba(77, 0, 115, 0.75) ), url('../img/contact.jpg') ;
-    background-position: center -400px;
+    background-position: center ;
+    background-attachment: fixed;
 }
 
 .contact-form{
@@ -559,4 +574,36 @@ h1{
     margin-bottom: 0;
     line-height: 1.7;
 }
+.msgs{
+    margin: 40px 0 10px 0;
+} 
 
+ .msg{
+    margin: 0 0 10px 0;
+} 
+
+/* .firstVideo{
+    height: 90vh
+} */
+
+/* .playing_btn{
+    width: 60px;
+    position: relative;
+    left: 50%;
+    top: -40%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    color: #fff;
+} */
+
+ .video-player{
+    margin: 0;
+} 
+
+/* .video-player video{
+    width: 100%;
+} */
+
+video:focus{
+    outline: none;
+}
