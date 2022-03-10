@@ -17,6 +17,7 @@ html{
   /* background: linear-gradient(90deg, rgba(2,0,36,1) 7%, rgba(0,0,0,1) 27%, rgba(77,0,116,1) 100%); */
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .navbar{

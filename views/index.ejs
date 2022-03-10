@@ -125,9 +125,9 @@
 <section class="msgs">
   <div class="msgs_section">
     <div class="container">
-      <h3 class="my-3">Our Messages</h3>
+      <!-- <h3 class="my-3">Our Messages</h3> -->
       <div class="firstVideo row">
-        <div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12">
           <div class="video-player" id="videoPlayer">
             <video width="100%" id="myVideo" controls autoplay>
               <source src="./video/VID-20220216-WA0014.mp4">
@@ -135,11 +135,11 @@
             <!-- <img src="/img/close.png" class="close-btn" onclick="stopVideo()" alt=""> -->
           </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
           <div class="row msg">
             <div class="col">
               <div class="video-player" id="videoPlayer">
-                <video width="52%" id="myVideo" controls autoplay>
+                <video width="75%" id="myVideo" controls>
                   <source src="./video/VID-20220216-WA0015.mp4">
                 </video>
                 <!-- <img src="/img/close.png" class="close-btn" onclick="stopVideo()" alt=""> -->
@@ -147,19 +147,27 @@
             </div>
           </div>
 
-
           <div class="row msg">
             <div class="col">
               <div class="video-player" id="videoPlayer">
-                <video width="52%" id="myVideo" controls autoplay>
+                <video width="75%" id="myVideo" controls>
                   <source src="./video/church.mp4">
                 </video>
                 <!-- <img src="/img/close.png" class="close-btn" onclick="stopVideo()" alt=""> -->
               </div>
             </div>
           </div>
-
         </div>
+
+        <div class="row msg wow fadeInRight">
+          <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+            <div class="video-player" id="videoPlayer">
+              <h1 class="invited">COME <br>WORSHIP <br>WITH US</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
       </div>
     </div>
   </div>
@@ -196,6 +204,13 @@
   </section>
 
   <%- include('./partials/team.ejs') %>
+
+  <section class="donate">
+    <div class="container">
+      <!-- <h3 class="donate_text"></h3> -->
+      <a href="/form"><button class="button" id="donate_btn">Donate</button></a>
+    </div>
+  </section>  
 
   <%- include('./partials/footer.ejs') %> 
   
