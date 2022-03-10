@@ -120,7 +120,7 @@
   
   /*contact-section*/
   .contact_bg{
-      margin-top: 20px;
+    margin-top: 20px;
     margin-bottom: 20px;
   }
 .contact_text{
@@ -147,7 +147,7 @@
 
 .pad-icon a {
     text-decoration: none;
-    margin-right: 40px
+    /* margin-right: 40px */
 }
 
 .input-group input:focus {
