@@ -22,7 +22,7 @@ app.set('view engine', 'ejs');
 
 //database connection
 
-mongoose.connect(process.env.DBURI, {useNewUrlParser: true , useUnifiedTopology: true})
+mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true , useUnifiedTopology: true})
   .then((result) => app.listen(port, () => {console.log('server running on ' + port)}))
   .catch((err) => console.log(err));
 
