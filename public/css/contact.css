@@ -13,12 +13,12 @@
   .banner{
     width: 100%;
     height: 50vh;
-    background-image: linear-gradient(rgba(77, 0, 116, 0.75), rgba(77, 0, 115, 0.75) ), url('../img/contact.jpg') ;
+    background-image: linear-gradient(rgba(77, 0, 116, 0.50), rgba(77, 0, 115, 0.50) ) ,url('../img/contact.jpg') ;
     /* background: linear-gradient(90deg, rgba(2,0,36,1) 7%, rgba(0,0,0,1) 27%, rgba(77,0,116,1) 100%); */
     background-size: cover;
-    background-position: center -90vh;
+    background-position: center;
     background-attachment: fixed;
-    /* background-repeat: no-repeat; */
+    background-repeat: no-repeat;
   }
   
   .navbar{
@@ -119,57 +119,27 @@
   
   
   /*contact-section*/
-  .contact_bg{
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-.contact_text{
-    padding: 10px;
-}
-
-.contact_text p{
-    text-align: justify;
-}
-.bg_color{
+  .contact-body{
     background-color: #4D0074;
-    /* margin-bottom: 10px; */
-    padding: 15px 0 15px 0
-}
-.msg-form {
-    background-color: white;
-    padding: 50px
-}
+    color: #fff;
+  }
 
-.pad-icon {
-    padding-top: 50px;
-    padding-left: 20px
-}
+  .contact-body p{
+    text-align: justify;
+  }
 
-.pad-icon a {
-    text-decoration: none;
-    /* margin-right: 40px */
-}
+  .contact-body a{
+    color: #fff;
+  }
 
-.input-group input:focus {
-    border: 1px solid blue
-}
+  #form-contact-name:focus,#form-contact-email:focus,#form-contact-phone:focus,#form-contact-company:focus,#form-contact-message:focus{
+    /* border: 3px solid #4D0074 !important; */
+    outline: 3px solid #4D0074 !important;;
+  }
 
-.pad-icon a:active {
-    height: 30px;
-    width: 30px;
-    background-color: #0080ff;
-    border-radius: 100%
-}
-
-.links {
-    padding-top: 50px;
-    width: 50%
-}
-
-#bordering a:active {
-    border: 1px solid #0080ff
-}
-
+  .card{
+    border: 1px solid #4D0074;
+  }
 @media(min-width:568px) {
     .container-fluid {
         margin: 100px 30px;
