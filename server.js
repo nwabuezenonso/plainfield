@@ -1,12 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose')
-const User = require('./models/user')
-// const Authrouters = require('./routes/authRoutes');
+const Authrouters = require('./routes/authrotes');
 const cookieParser = require('cookie-parser');
-const jwt = require('jsonwebtoken');
-const { requireAuth, checkUser } = require('./middleware/middleware'); 
-// const { sendWelcomeEmail } = require('./emails/mail')
-// const sendMail = require('./mail')
+
 
 //set up the express function
 const app = express()
@@ -17,6 +13,7 @@ app.use(express.static('public'));
 app.use(express.json());
 // app.use(express.urlencoded({extended: true}))
 app.use(cookieParser());
+app.use(Authrouters)
 
 //view engine
 app.set('view engine', 'ejs');
@@ -28,14 +25,6 @@ mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true , useUnifiedTop
   .catch((err) => console.log(err));
 
 //routes
-
-// create json web token
-const maxAge = 3 * 24 * 60 * 60;
-const createToken = (id) => {
-  return jwt.sign({ id }, process.env.JSON_SECRET, {
-    expiresIn: maxAge
-  });
-};
 
 // app.get('*', checkUser)
 app.get('/', (req, res)=>{
@@ -68,67 +57,6 @@ app.get('/baptismForm', (req, res)=>{
   })
 })
 
-app.get('/signup', (req, res)=>{
-  res.render('signup', {
-    title: 'Signup'
-  })
-})
-
-app.post('/signup', async(req, res) =>{
-  // console.log(req.body)
-
-  const {name, password} = req.body
-
-  try {
-    const user = await User.create({ name, password });
-    const token = createToken(user._id);
-    res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
-    res.status(200).json({ user: user._id });
-  }
-  catch(err) {
-    // const errors = handleErrors(err);
-    res.json({ err });
-  }
-})
-
-app.get('/login', (req, res) => {
-  res.render('login', {
-    title: 'Log in'
-  })
-})
-
-app.post('/login', async (req, res) =>{
-  const { name, password } = req.body;
-
-  try {
-    const user = await User.login(name, password);
-    // sendCancelationEmail(user.email, user.name)
-    const token = createToken(user._id);
-    res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
-    res.status(200).json({ user: user._id });
-  } 
-  catch (err) {
-    res.json({ err });
-  }
-})
-
-app.get('/dashboard',requireAuth, checkUser, (req, res) => {
-  res.render('dashboard', {
-    title: 'Dashboard'
-  })
-})
-
-app.get('/membership',requireAuth, checkUser, (req, res) => {
-  res.render('membership', {
-    title: 'Membership'
-  })
-})
-
-app.get('/baptism',requireAuth, checkUser, (req, res) => {
-  res.render('baptism', {
-    title: 'Baptism'
-  })
-})
 
 app.get('/form', (req, res) => {
   res.render('form', {
@@ -136,25 +64,8 @@ app.get('/form', (req, res) => {
   })
 })
 
-// app.get('/member',requireAuth,  (req, res) =>{
-//   res.render('member')
-// })
-// app.post("/email", (req, res) =>{
-//   const {email, subject} = req.body
-//   console.log('Data: ', req.body)
-  
-//   sendMail(email, subject , function(err,data){
-//       if(err){
-//           res.status(500).json({message: 'Internal Error'});
-//       }else{
-//           res.json({message: 'Email sent!!!!'})
-//       }
-//   })
-//   res.json({message: 'Message recieved!'})
-// })
-// app.use(Authrouters);
-
+app.use(Authrouters)
 //Error routes
-// app.use((req, res)=>{
-//   res.status(404).render('404')
-// })
+app.use((req, res)=>{
+  res.send('<h1>ERROR HAS OCCURED, contact the development team quick</h1>')
+})
