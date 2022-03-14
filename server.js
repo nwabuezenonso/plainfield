@@ -2,8 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose')
 const User = require('./models/user')
 // const Authrouters = require('./routes/authRoutes');
-// const cookieParser = require('cookie-parser');
-// const { requireAuth, checkUser } = require('./middleware/authmiddleware'); 
+const cookieParser = require('cookie-parser');
+const jwt = require('jsonwebtoken');
+const { requireAuth, checkUser } = require('./middleware/middleware'); 
 // const { sendWelcomeEmail } = require('./emails/mail')
 // const sendMail = require('./mail')
 
@@ -15,7 +16,7 @@ const port = process.env.PORT
 app.use(express.static('public'));
 app.use(express.json());
 // app.use(express.urlencoded({extended: true}))
-// app.use(cookieParser());
+app.use(cookieParser());
 
 //view engine
 app.set('view engine', 'ejs');
@@ -27,6 +28,15 @@ mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true , useUnifiedTop
   .catch((err) => console.log(err));
 
 //routes
+
+// create json web token
+const maxAge = 3 * 24 * 60 * 60;
+const createToken = (id) => {
+  return jwt.sign({ id }, process.env.JSON_SECRET, {
+    expiresIn: maxAge
+  });
+};
+
 // app.get('*', checkUser)
 app.get('/', (req, res)=>{
   res.render('index', {
@@ -71,8 +81,8 @@ app.post('/signup', async(req, res) =>{
 
   try {
     const user = await User.create({ name, password });
-    // const token = createToken(user._id);
-    // res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+    const token = createToken(user._id);
+    res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
     res.status(200).json({ user: user._id });
   }
   catch(err) {
@@ -93,8 +103,8 @@ app.post('/login', async (req, res) =>{
   try {
     const user = await User.login(name, password);
     // sendCancelationEmail(user.email, user.name)
-    // const token = createToken(user._id);
-    // res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+    const token = createToken(user._id);
+    res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
     res.status(200).json({ user: user._id });
   } 
   catch (err) {
@@ -102,19 +112,19 @@ app.post('/login', async (req, res) =>{
   }
 })
 
-app.get('/dashboard', (req, res) => {
+app.get('/dashboard',requireAuth, checkUser, (req, res) => {
   res.render('dashboard', {
     title: 'Dashboard'
   })
 })
 
-app.get('/membership', (req, res) => {
+app.get('/membership',requireAuth, checkUser, (req, res) => {
   res.render('membership', {
     title: 'Membership'
   })
 })
 
-app.get('/baptism', (req, res) => {
+app.get('/baptism',requireAuth, checkUser, (req, res) => {
   res.render('baptism', {
     title: 'Baptism'
   })
