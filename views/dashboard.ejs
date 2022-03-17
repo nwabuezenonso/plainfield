@@ -7,21 +7,21 @@
     <div class="main-content">
         <main>
           <div>welcome, <b><%= user.name %></b><div>
-            <form>
+            <form method="POST" action="/uploadData" enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Event Title</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Title of event">
+                  <input name="eventname" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Title of event">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Event description</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="description of event">
+                  <input name="eventdescription" type="text" class="form-control" id="exampleInputPassword1" placeholder="description of event">
                 </div>
                 <div class="form-check">
-                  <input type="date" class="form-check-input" id="exampleCheck1">
+                  <input  name="eventdate" type="date" class="form-check-input" id="exampleCheck1">
                   <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
                 <div class="form-group">
-                    <input type="file" style="margin-top: 20px;" class="form-control-file" id="exampleFormControlFile1">
+                    <input  name="upload" accept="image/*" type="file" style="margin-top: 20px;" class="form-control-file" id="exampleFormControlFile1">
                 </div>
                 <button type="submit" >Submit</button>
               </form>

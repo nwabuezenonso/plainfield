@@ -1,8 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose')
-const Authrouters = require('./routes/authrotes');
 const cookieParser = require('cookie-parser');
-
+const bodyParser =  require('body-parser')
+const Authrouters = require('./routes/authrotes');
 
 //set up the express function
 const app = express()
@@ -11,7 +11,8 @@ const port = process.env.PORT
 // middleware
 app.use(express.static('public'));
 app.use(express.json());
-// app.use(express.urlencoded({extended: true}))
+// app.use(bodyParser.urlencoded({ extended: false }))
+// app.use(bodyParser.json())
 app.use(cookieParser());
 app.use(Authrouters)
 
@@ -24,13 +25,11 @@ mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true , useUnifiedTop
   .then((result) => app.listen(port, () => {console.log('server running on ' + port)}))
   .catch((err) => console.log(err));
 
-//routes
+
 
 // app.get('*', checkUser)
 app.get('/', (req, res)=>{
-  res.render('index', {
-    title: 'Home'
-  })
+    res.render('index', {title: 'Home'})
 })
 
 app.get('/about', (req, res)=>{
