@@ -75,6 +75,13 @@ router.get('/baptism',requireAuth, checkUser, (req, res) => {
     })
 })
 
+const multer = require('multer')
+const upload =  multer({
+  dest: 'images'
+})
 
+router.post('/uploadData', (req,res)=>{
+  res.send()
+})
 
 module.exports = router
