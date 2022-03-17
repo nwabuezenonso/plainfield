@@ -75,13 +75,21 @@ router.get('/baptism',requireAuth, checkUser, (req, res) => {
     })
 })
 
-const multer = require('multer')
-const upload =  multer({
-  dest: 'images'
-})
+const multer = require('multer');
+// const res = require('express/lib/response');
+const upload =  multer({})
 
-router.post('/uploadData', (req,res)=>{
-  res.send()
+router.post('/uploadData',upload.single('upload'), (req,res)=>{
+  req.body.upload = req.file.buffer
+ const img = new Image(req.body.upload)
+  
+  img.save()
+    .then((result)=>{
+      res.json({result})
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
 })
 
 module.exports = router

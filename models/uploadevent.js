@@ -5,19 +5,15 @@ const mongoose = require('mongoose');
 const imageSchema  = new mongoose.Schema({
   eventname: {
     type: String,
-    required: true,
   },
   eventdescription: {
     type: String,
-    required: true
   },
   eventdate: {
     type: Date,
-    required: true
   },
   upload:{
-    type: Buffer,
-    contentType: String
+    type: Buffer
   }
 });
 
