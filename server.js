@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser');
-const bodyParser =  require('body-parser')
+const bodyParser =  require('body-parser') 
 const Authrouters = require('./routes/authrotes');
 
 //set up the express function
@@ -14,7 +14,6 @@ app.use(express.json());
 // app.use(bodyParser.urlencoded({ extended: false }))
 // app.use(bodyParser.json())
 app.use(cookieParser());
-app.use(Authrouters)
 
 //view engine
 app.set('view engine', 'ejs');
@@ -22,10 +21,10 @@ app.set('view engine', 'ejs');
 //database connection
 
 mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true , useUnifiedTopology: true})
-  .then((result) => app.listen(port, () => {console.log('server running on ' + port)}))
+  .then((result) => app.listen(port, () => {console.log('Connected to ' + port)}))
   .catch((err) => console.log(err));
 
-
+  app.use(Authrouters)
 
 // app.get('*', checkUser)
 app.get('/', (req, res)=>{

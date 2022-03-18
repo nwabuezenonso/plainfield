@@ -17,6 +17,20 @@ const userSchema = new mongoose.Schema({
 });
 
 
+const imageSchema  = new mongoose.Schema({
+  // name: {
+  //   type: String,
+  // },
+  // desc: {
+  //   type: String,
+  // },
+  // eventdate: {
+  //   type: Date,
+  // },
+  img:{data:Buffer,contentType: String}
+});
+
+
 //fire a function before doc saved to db
 userSchema.pre('save', async function(next) {
   const salt = await bcrypt.genSalt();
@@ -38,8 +52,12 @@ userSchema.statics.login = async function(name, password) {
 };
 
 
-
-
 const User = mongoose.model('user', userSchema);
+const Image = mongoose.model('img', imageSchema);
 
-module.exports = User;
+
+
+module.exports = {
+  User,
+  Image
+};
