@@ -18,16 +18,15 @@ const userSchema = new mongoose.Schema({
 
 
 const imageSchema  = new mongoose.Schema({
-  // name: {
-  //   type: String,
-  // },
-  // desc: {
-  //   type: String,
-  // },
-  // eventdate: {
-  //   type: Date,
-  // },
-  img:{data:Buffer,contentType: String}
+  fname: {
+    type: String,
+  },
+  lname: {
+    type: String,
+  },
+  img:{
+    type: String
+  }
 });
 
 

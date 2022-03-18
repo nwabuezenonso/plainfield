@@ -10,8 +10,9 @@ const port = process.env.PORT
 
 // middleware
 app.use(express.static('public'));
+app.use(express.static('uploads'))
 app.use(express.json());
-// app.use(bodyParser.urlencoded({ extended: false }))
+app.use(express.urlencoded({extended: true}))
 // app.use(bodyParser.json())
 app.use(cookieParser());
 

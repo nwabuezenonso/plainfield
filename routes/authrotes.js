@@ -1,9 +1,9 @@
 const { Router } = require('express')
 const jwt = require('jsonwebtoken');
 const  sharp = require('sharp')
+const multer = require('multer');
 const {User, Image} = require('../models/user')
-const path =  require('path')
-var fs = require('fs');
+const path =  require('path');
 // const authController = require('../controllers/authController')
 const { requireAuth, checkUser } = require('../middleware/middleware'); 
 const router = Router()
@@ -89,43 +89,11 @@ router.get('/baptism',requireAuth, checkUser, (req, res) => {
     })
 })
 
-
-
-//setting up multer
-var multer = require('multer');
-// SET STORAGE
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'uploads')
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now())
-  }
+router.get("/learn",(req,res)=>{
+  res.render("imagesPage");
 })
-var upload = multer({ storage: storage })
-
-
-
-router.get("/me",(req,res)=>{
-  res.render("index");
-})
-router.post("/uploadphoto",upload.single('myImage'),(req,res)=>{
-  var img = fs.readFileSync(req.file.path);
-  var encode_img = img.toString('base64');
-  var final_img = {
-      contentType:req.file.mimetype,
-      image:new Buffer.from(encode_img,'base64')
-  };
-  Image.create(final_img,function(err,result){
-      if(err){
-          console.log(err);
-      }else{
-          console.log(result.img.Buffer);
-          console.log("Saved To database");
-          res.contentType(final_img.contentType);
-          res.send(final_img.image);
-      }
-  })
+router.post("/uploadphoto",(req,res)=>{
+ 
 })
 
 
