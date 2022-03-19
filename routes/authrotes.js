@@ -18,7 +18,7 @@ const createToken = (id) => {
 
 //routes
 
-router.get('/signup', (req, res)=>{
+router.get('/signup',requireAuth, (req, res)=>{
     res.render('signup', {
       title: 'Signup'
     })
@@ -64,19 +64,6 @@ router.get('/dashboard',requireAuth, checkUser, (req, res) => {
     })
 })
 
-// router.get('/me', (req, res) => {
-//   Image.find({}, (err, items) => {
-//       if (err) {
-//           console.log(err);
-//           res.status(500).send('An error occurred', err);
-//       }
-//       else {
-//         res.render('imagesPage', { items: items });
-//       }
-//   });
-// });
-
-
 router.get('/membership',requireAuth, checkUser, (req, res) => {
     res.render('membership', {
       title: 'Membership'
@@ -92,11 +79,11 @@ router.get('/baptism',requireAuth, checkUser, (req, res) => {
 
 var upload = multer({
   storage: multer.diskStorage({
-    destination: (req, res, cb) =>{
+    destination: (req, file, cb) =>{
       cb(null, './uploads')
     },
     filename: function(req, file, callback ) {
-      callback(null, file.fieldname + '-' + Date.now + path.extname(file.originalname))
+      callback(null, file.fieldname + ' - ' + Date.now() + path.extname(file.originalname))
     }
   })
 })

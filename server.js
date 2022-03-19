@@ -12,7 +12,7 @@ const port = process.env.PORT
 app.use(express.static('public'));
 app.use(express.static('uploads'))
 app.use(express.json());
-app.use(express.urlencoded({extended: true}))
+// app.use(express.urlencoded({extended: true}))
 // app.use(bodyParser.json())
 app.use(cookieParser());
 
@@ -22,7 +22,7 @@ app.set('view engine', 'ejs');
 //database connection
 
 mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true , useUnifiedTopology: true})
-  .then((result) => app.listen(port, () => {console.log('Connected to port' + port)}))
+  .then((result) => app.listen(port, () => {console.log('Connected to port ' + port)}))
   .catch((err) => console.log(err));
 
   app.use(Authrouters)
