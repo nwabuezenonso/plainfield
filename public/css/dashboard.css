@@ -137,7 +137,7 @@ header{
 main{
     margin-top: 60px;
     background: #fff;
-    min-height: 90vh;
+    /* min-height: 90vh; */
     padding: 1rem;
 }
 

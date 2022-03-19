@@ -64,17 +64,17 @@ router.get('/dashboard',requireAuth, checkUser, (req, res) => {
     })
 })
 
-router.get('/me', (req, res) => {
-  Image.find({}, (err, items) => {
-      if (err) {
-          console.log(err);
-          res.status(500).send('An error occurred', err);
-      }
-      else {
-        res.render('imagesPage', { items: items });
-      }
-  });
-});
+// router.get('/me', (req, res) => {
+//   Image.find({}, (err, items) => {
+//       if (err) {
+//           console.log(err);
+//           res.status(500).send('An error occurred', err);
+//       }
+//       else {
+//         res.render('imagesPage', { items: items });
+//       }
+//   });
+// });
 
 
 router.get('/membership',requireAuth, checkUser, (req, res) => {
@@ -89,14 +89,47 @@ router.get('/baptism',requireAuth, checkUser, (req, res) => {
     })
 })
 
+
+var upload = multer({
+  storage: multer.diskStorage({
+    destination: (req, res, cb) =>{
+      cb(null, './uploads')
+    },
+    filename: function(req, file, callback ) {
+      callback(null, file.fieldname + '-' + Date.now + path.extname(file.originalname))
+    }
+  })
+})
+
+router.post("/uploadphoto", upload.single('image'), (req,res)=>{
+  console.log(req.file)
+  var x = new Image();
+  x.fname = req.body.fname;
+  x.lname = req.body.lname;
+  x.img =  req.file.filename
+
+  x.save((err, doc) =>{
+    if(!err){
+      console.log('save successfully')
+      res.redirect('/working')
+    }else{
+      console.log(err)
+    }
+  })
+})
+
 router.get("/learn",(req,res)=>{
   res.render("imagesPage");
 })
-router.post("/uploadphoto",(req,res)=>{
- 
+
+router.get("/working",(req,res)=>{
+  Image.find()
+  .then(function(doc){
+    res.render('working', {
+      item: doc
+    })
+  })
 })
-
-
 
 
 
