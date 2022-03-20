@@ -45,9 +45,12 @@ app.get('/about', (req, res)=>{
 })
 
 app.get('/event', (req, res)=>{
-  res.render('event', {
-    title: 'Event'
-  })
+  Image.find().sort({ createdAt: 1})
+  .then(function(doc){
+    res.render('event', {
+      title : 'Event' , item: doc
+    })
+  })  
 })
 
 app.get('/contact', (req, res)=>{
