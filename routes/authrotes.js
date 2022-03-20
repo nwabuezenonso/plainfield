@@ -59,21 +59,12 @@ router.post('/login', async (req, res) =>{
 })
   
 router.get('/dashboard',requireAuth, checkUser, (req, res) => {
+  Image.find().sort({createdAt: -1})
+  .then(function(doc){
     res.render('dashboard', {
-      title: 'Dashboard'
+      title : 'dashboard' , item: doc
     })
-})
-
-router.get('/membership',requireAuth, checkUser, (req, res) => {
-    res.render('membership', {
-      title: 'Membership'
-    })
-})
-  
-router.get('/baptism',requireAuth, checkUser, (req, res) => {
-    res.render('baptism', {
-      title: 'Baptism'
-    })
+  })
 })
 
 
@@ -88,36 +79,35 @@ var upload = multer({
   })
 })
 
-router.post("/uploadphoto", upload.single('image'), (req,res)=>{
+router.post("/uploadEventData", upload.single('image'), (req,res)=>{
   console.log(req.file)
-  var x = new Image();
-  x.fname = req.body.fname;
-  x.lname = req.body.lname;
-  x.img =  req.file.filename
+  var eventdata = new Image();
+  eventdata.eventname = req.body.eventname;
+  eventdata.eventdescription = req.body.eventdescription;
+  eventdata.eventdate = req.body.eventdate;
+  eventdata.img =  req.file.filename
 
-  x.save((err, doc) =>{
+  eventdata.save((err, doc) =>{
     if(!err){
       console.log('save successfully')
-      res.redirect('/working')
+      res.redirect('/dashboard')
     }else{
       console.log(err)
     }
   })
 })
 
-router.get("/learn",(req,res)=>{
-  res.render("imagesPage");
-})
-
-router.get("/working",(req,res)=>{
-  Image.find()
-  .then(function(doc){
-    res.render('working', {
-      item: doc
-    })
+router.get('/membership',requireAuth, checkUser, (req, res) => {
+  res.render('membership', {
+    title: 'Membership'
   })
 })
-
+  
+router.get('/baptism',requireAuth, checkUser, (req, res) => {
+  res.render('baptism', {
+    title: 'Baptism'
+  })
+})
 
 
 module.exports = router

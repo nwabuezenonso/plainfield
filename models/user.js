@@ -14,21 +14,23 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   }
-});
+}, {timestamps: true});
 
 
 const imageSchema  = new mongoose.Schema({
-  fname: {
+  eventname: {
     type: String,
   },
-  lname: {
+  eventdescription: {
     type: String,
+  },
+  eventdate:{
+    type: String
   },
   img:{
     type: String
   }
-});
-
+}, {timestamps: true});
 
 //fire a function before doc saved to db
 userSchema.pre('save', async function(next) {

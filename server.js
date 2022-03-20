@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser');
 const bodyParser =  require('body-parser') 
+  const {User,Image} =require('./models/user')
 const Authrouters = require('./routes/authrotes');
 
 //set up the express function
@@ -29,7 +30,12 @@ mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true , useUnifiedTop
 
 // app.get('*', checkUser)
 app.get('/', (req, res)=>{
-    res.render('index', {title: 'Home'})
+  Image.find().sort({ createdAt: 1})
+  .then(function(doc){
+    res.render('index', {
+      title : 'Home' , item: doc
+    })
+  })  
 })
 
 app.get('/about', (req, res)=>{

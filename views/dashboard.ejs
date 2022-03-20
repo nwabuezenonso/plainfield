@@ -1,20 +1,14 @@
     <%- include('./partials/header.ejs') %>
-    <!-- <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
-    <script defer src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
-    <script defer src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
-    <script defer src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
-    <script defer src="https://unpkg.com/filepond/dist/filepond.js"></script>
-    <script defer src="/js/fileUpload.js"></script> -->
     <title><%= title %></title>
     <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <%- include('./partials/navboard.ejs') %>
     <div class="main-content">
         <main>
           <div>welcome, <b><%= user.name %></b><div>
-            <form method="POST" action="/uploadData" enctype="multipart/form-data">
+            <form method="POST" action="/uploadEventData" enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Event Title</label>
                   <input name="eventname" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Title of event">
@@ -28,38 +22,12 @@
                   <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
                 <div class="form-group">
-                    <input  name="image" accept="image/*" type="file" style="margin-top: 20px;" class="filepond" id="exampleFormControlFile1">
+                    <input  name="image"  type="file" style="margin-top: 20px;" class="filepond" id="exampleFormControlFile1">
                 </div>
                 <button type="submit" >Submit</button>
               </form>
         </main>
-
-        <div class="blog-home2">
-          <div class="container">
-            <!-- Row  -->
-            <div class="row justify-content-center">
-              <!-- Column -->
-              <!-- Column -->
-              <!-- Column -->
-            </div>
-            <div class="row mt-4">
-              <!-- Column -->
-              <div class="col-md-4 on-hover wow fadeIn"  data-wow-delay="0.1s">
-                <div class="card border-0 mb-4">
-                  <img class="card_img card-img-top" src="./img/praise1.jpg" alt="wrappixel kit">
-                  <div class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded text-white position-absolute">Feb<span class="d-block">13</span></div>
-                  <h5 class="font-weight-medium mt-3">Septuagesima Sunday</h5>
-                  <p class="mt-3">Join us on  the name for the ninth Sunday before Easter, the third before Ash Wednesday and be blessed </p>
-                  <a href="https://en.wikipedia.org/wiki/Septuagesima" target="_blank" class="text-decoration-none linking text-themecolor mt-2">Learn More</a>
-                </div>
-              </div>
-              
-              
-            </div>
-          </div>
-        </div>
-        
-    </div>
-
+        <%- include('./partials/specialevent.ejs') %>
+      </div>
 </body>
 </html>

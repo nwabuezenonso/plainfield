@@ -417,14 +417,11 @@ h1{
       background: -webkit-linear-gradient(left, #4D0074 0%, #4D0074 100%);
       background: -o-linear-gradient(left, #4D0074 0%, #4D0074 100%);
       background: linear-gradient(to right, #4D0074 0%, #4D0074 100%);
-  }
+  }  
+    .card_img{
+        height: 300px;
+    }
 /* End card section */
-
-
-.card_img{
-    height: 300px;
-}
-
 .Baptized{
     /* background-color: ; */
     background-image:  linear-gradient(rgba(77, 0, 116, 0.75), rgba(77, 0, 115, 0.75) ), url('../img/kids.jpg') ;
