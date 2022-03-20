@@ -12,6 +12,7 @@
     </div>
     <div class="row mt-4">
       <!-- Column -->
+      <% if(item.length > 0) { %>
         <% item.forEach (function(item) { %>
           <div class="col-md-4 on-hover wow fadeIn"  data-wow-delay="0.1s">
             <div class="card border-0 mb-4">
@@ -24,6 +25,9 @@
             </div>
           </div>
         <% }) %> 
+      <%  }  else{ %>
+        <p style="font-size: 30px; text-align: center; margin: 0 30% 0 30%;">There are no event to display</p>
+        <% } %>
     </div>
   </div>
 </div>
