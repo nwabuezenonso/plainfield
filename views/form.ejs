@@ -27,214 +27,132 @@
 
   <section>
       <div class="container">
-        <form>
-            <div class="form-row">
+        <form action="/ourmembersform" method="POST">
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="inputEmail4">Full Name</label>
+              <input type="text" name = fname class="form-control" id="inputEmail4" placeholder="First Name">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputEmail4">Last Name</label>
+              <input type="text" name = lname class="form-control" id="inputPassword4" placeholder="Last Name">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputEmail4">Middle Name</label>
+              <input type="text" name = mname class="form-control" id="inputPassword4" placeholder="Middle Name">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" name = address class="form-control" id="inputAddress" placeholder="Your Address...">
+          </div>
+
+          <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Marital Status</label>
+                <input type="text" name="maritalstatus" placeholder="Single or Married" class="form-control" id="inputEmail4">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Sex</label>
+                <input type="text" name="sex" placeholder="Male or Female" class="form-control" id="inputPassword4">
+              </div>
+          </div>
+
+          <div class="form-group">
+              <label for="inputAddress">Home Address</label>
+              <input type="text" name= "homeaddress" class="form-control" id="inputAddress" placeholder="Your Home Address">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="inputCity">City/Town</label>
+              <input type="text" name="city/town" placeholder="Add your city or town" class="form-control" id="inputCity">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="inputState">Date of birth</label>
+              <input type="date" name="Dob" placeholder="Add your Date of Birth" class="form-control" id="inputCountry">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="inputState">Country</label>
+              <input type="text" name="country" placeholder="Fill in your country of Residence" class="form-control" id="inputCountry">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="inputZip">Zip code</label>
+              <input type="text" name="Zip" class="form-control" id="inputZip">
+            </div>
+          </div>
+
+          <div class="form-group">
+              <label for="inputAddress">Email</label>
+              <input type="text" name="email" class="form-control" id="inputAddress" placeholder="Your Email Address...">
+          </div>
+
+          <div class="form-group">
+              <label for="inputAddress">Occupation:</label>
+              <input type="text" name="occupation" class="form-control" id="input" placeholder="Your Occupation">
+          </div>
+
+
+
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="inputState">Gender</label>
+              <input type="text" name="gender"  class="form-control" id="inputCountry">
+            </div>
               <div class="form-group col-md-4">
-                <label for="inputEmail4">Full Name</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="First Name">
+                <label for="inputCity">Baptized</label>
+                <input type="text" name="Baptized" placeholder="Are you Baptized?" class="form-control" id="inputCity">
               </div>
               <div class="form-group col-md-4">
-                <label for="inputEmail4">Last Name</label>
-                <input type="text" class="form-control" id="inputPassword4" placeholder="Last Name">
+                <label for="inputState">Confirmed</label>
+                <input type="text"  name="confirmed" class="form-control" id="inputCountry">
+              </div>
+          </div>
+
+          <h2>Children (if any)</h2>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="inputCity">Number of Children</label>
+              <input type="text" placeholder="2" name="no_of_children" class="form-control" id="inputCity">
+            </div>
+              <div class="form-group col-md-4">
+                <label for="inputCity">Names</label>
+                <input type="text" placeholder="Micheal and jenny" name="children_name" class="form-control" id="inputCity">
               </div>
               <div class="form-group col-md-4">
-                <label for="inputEmail4">Middle Name</label>
-                <input type="text" class="form-control" id="inputPassword4" placeholder="Middle Name">
+                <label for="inputState">Date of births</label>
+                <input type="text" name="children_dob" placeholder="Micheal(date of birth), jenny(Date of birth)" class="form-control" id="inputCountry">
               </div>
-            </div>
-           
-            <div class="form-group">
-              <label for="inputAddress">Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="Your Address...">
-            </div>
+          </div>
 
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="inputEmail4">Marital Status:</label>
-                  <input type="email" class="form-control" id="inputEmail4">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="inputEmail4">Sex:</label>
-                  <input type="text" class="form-control" id="inputPassword4">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="inputAddress">Home Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Your Home Address...">
-            </div>
-
-            <div class="form-row">
-              <div class="form-group col-md-3">
-                <label for="inputCity">City/Town</label>
-                <input type="text" class="form-control" id="inputCity">
+          <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="inputCity">Gender</label>
+                <input type="text" name="gender_of_children" placeholder="Micheal(male), jenny(Female)" class="form-control" id="inputCity" >
               </div>
-              <div class="form-group col-md-3">
-                <label for="inputState">Country</label>
-                <input type="text" class="form-control" id="inputCountry">
+              <div class="form-group col-md-4">
+                <label for="inputState">Baptized</label>
+                <input type="text" name="Baptized_kids" placeholder="Micheal(Baptized), jenny(Not yet Baptized)" class="form-control" id="inputCountry">
               </div>
-              <div class="form-group col-md-3">
-                <label for="inputState">Country</label>
-                <input type="text" class="form-control" id="inputCountry">
-              </div>
-              <div class="form-group col-md-3">
-                <label for="inputZip">Zip code</label>
-                <input type="text" class="form-control" id="inputZip">
-              </div>
-            </div>
-
-            <div class="form-group">
-                <label for="inputAddress">Email:</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Your Email Address...">
-            </div>
-
-            <div class="form-group">
-                <label for="inputAddress">Occupation:</label>
-                <input type="text" class="form-control" id="input" placeholder="Your Occupation">
-            </div>
-
-
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="inputCity">Date of birth:</label>
-                  <input type="date" class="form-control" id="inputCity">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="inputState">Gender:</label>
-                  <input type="text" class="form-control" id="inputCountry">
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="inputCity">Baptized:</label>
-                  <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="form-group col-md-6">
+              <div class="form-group col-md-4">
                   <label for="inputState">Confirmed:</label>
-                  <input type="text" class="form-control" id="inputCountry">
+                  <input type="text" name="kid_comfirmed" placeholder="Micheal(Confirmed), jenny(Not yet)" class="form-control" id="inputCountry">
                 </div>
-            </div>
+          </div>
 
-            <h2>Children (if any)</h2>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="inputCity">Name:</label>
-                  <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="inputState">Date of birth:</label>
-                  <input type="date" class="form-control" id="inputCountry">
-                </div>
-            </div>
+          <div class="form-group">
+              <label for="inputAddress">Ministries interested:</label>
+              <input type="text" name="interested_ministries" placeholder="micheal(Adult ministry), jenny(Children ministry)" class="form-control" id="inputAddress">
+          </div>
 
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="inputCity">Gender:</label>
-                  <input type="text" class="form-control" id="inputCity" >
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="inputState">Baptized:</label>
-                  <input type="text" class="form-control" id="inputCountry">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="inputState">Confirmed:</label>
-                    <input type="text" class="form-control" id="inputCountry">
-                  </div>
-            </div>
+          <div class="form-group">
+            <label for="inputAddress">Former church / Religion:</label>
+            <input type="text" name="Former_church" placeholder="What was the name of your previous church?" class="form-control" id="inputAddress">
+          </div>
 
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="inputCity">Name:</label>
-                  <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="inputState">Date of birth:</label>
-                  <input type="date" class="form-control" id="inputCountry">
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="inputCity">Gender:</label>
-                  <input type="text" class="form-control" id="inputCity" >
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="inputState">Baptized:</label>
-                  <input type="text" class="form-control" id="inputCountry">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="inputState">Confirmed:</label>
-                    <input type="text" class="form-control" id="inputCountry">
-                  </div>
-            </div>
-
-
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="inputCity">Name:</label>
-                  <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="inputState">Date of birth:</label>
-                  <input type="date" class="form-control" id="inputCountry">
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="inputCity">Gender:</label>
-                  <input type="text" class="form-control" id="inputCity" >
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="inputState">Baptized:</label>
-                  <input type="text" class="form-control" id="inputCountry">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="inputState">Confirmed:</label>
-                    <input type="text" class="form-control" id="inputCountry">
-                  </div>
-            </div>
-
-
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="inputCity">Name:</label>
-                  <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="inputState">Date of birth:</label>
-                  <input type="date" class="form-control" id="inputCountry">
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="inputCity">Gender:</label>
-                  <input type="text" class="form-control" id="inputCity" >
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="inputState">Baptized:</label>
-                  <input type="text" class="form-control" id="inputCountry">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="inputState">Confirmed:</label>
-                    <input type="text" class="form-control" id="inputCountry">
-                  </div>
-            </div>
-
-            <div class="form-group">
-                <label for="inputAddress">Ministries interested:</label>
-                <input type="text" class="form-control" id="inputAddress">
-            </div>
-
-            <div class="form-group">
-                <label for="inputAddress">Former church / Religion:</label>
-                <input type="text" class="form-control" id="inputAddress">
-            </div>
-
-            <button class="button">SUBMIT</button></a>
-          </form>
+          <button class="button">SUBMIT</button>
+        </form>
       </div>
   </section>
 

@@ -97,6 +97,16 @@ router.post("/uploadEventData", upload.single('image'), (req,res)=>{
   })
 })
 
+router.get('/form', (req, res) => {
+  res.render('form', {
+    title: 'form'
+  })
+})
+
+router.post('ourmembersform' , (req, res) =>{
+  console.log(req.body)
+})
+
 router.get('/membership',requireAuth, checkUser, (req, res) => {
   res.render('membership', {
     title: 'Membership'

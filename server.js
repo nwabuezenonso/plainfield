@@ -13,7 +13,7 @@ const port = process.env.PORT
 app.use(express.static('public'));
 app.use(express.static('uploads'))
 app.use(express.json());
-// app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({extended: true}))
 // app.use(bodyParser.json())
 app.use(cookieParser());
 
@@ -66,14 +66,9 @@ app.get('/baptismForm', (req, res)=>{
 })
 
 
-app.get('/form', (req, res) => {
-  res.render('form', {
-    title: 'form'
-  })
-})
 
 app.use(Authrouters)
 //Error routes
 app.use((req, res)=>{
-  res.send('<h1>ERROR HAS OCCURED, contact the development team quick</h1>')
+  res.status(400).send("Page not available")
 })
