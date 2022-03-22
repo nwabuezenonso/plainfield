@@ -32,6 +32,81 @@ const imageSchema  = new mongoose.Schema({
   }
 }, {timestamps: true});
 
+
+const MemberSchema  = new mongoose.Schema({
+  fname: {
+    type: String,
+  },
+  lname: {
+    type: String,
+  },
+  mname:{
+    type: String
+  },
+  address:{
+    type: String
+  },
+  maritalstatus:{
+    type: String
+  },
+  sex:{
+    type: String
+  },
+  homeaddress:{
+    type: String
+  },
+  City:{
+    type: String
+  },
+  Dob:{
+    type: String
+  },
+  country:{
+    type: String
+  },
+  Zip:{
+    type: String
+  },
+  email:{
+    type: String
+  },
+  occupation:{
+    type: String
+  },
+  gender:{
+    type: String
+  },
+  Baptized:{
+    type: String
+  },
+  confirmed:{
+    type: String
+  },
+  no_of_children:{
+    type: String
+  },
+  children_name:{
+    type: String
+  },
+  children_dob:{
+    type: String
+  },
+  gender_of_children:{
+    type: String
+  },
+  Baptized_kids:{
+    type: String
+  },
+  kid_confirmed:{
+    type: String
+  },
+  interested_ministries:{
+    type: String
+  },
+  Former_church:{
+    type: String
+  }
+}, {timestamps: true});
 //fire a function before doc saved to db
 userSchema.pre('save', async function(next) {
   const salt = await bcrypt.genSalt();
@@ -55,10 +130,12 @@ userSchema.statics.login = async function(name, password) {
 
 const User = mongoose.model('user', userSchema);
 const Image = mongoose.model('img', imageSchema);
+const Member = mongoose.model('member', MemberSchema)
 
 
 
 module.exports = {
   User,
-  Image
+  Image,
+  Member
 };

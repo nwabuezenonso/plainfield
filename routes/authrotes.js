@@ -2,7 +2,7 @@ const { Router } = require('express')
 const jwt = require('jsonwebtoken');
 const  sharp = require('sharp')
 const multer = require('multer');
-const {User, Image} = require('../models/user')
+const {User, Image, Member} = require('../models/user')
 const path =  require('path');
 // const authController = require('../controllers/authController')
 const { requireAuth, checkUser } = require('../middleware/middleware'); 
@@ -103,13 +103,28 @@ router.get('/form', (req, res) => {
   })
 })
 
-router.post('ourmembersform' , (req, res) =>{
+router.post('/ourmembersform' , (req, res) =>{
+  const memberData = new Member(req.body)
+  
+  memberData.save()
+    .then((result)=>{
+      res.redirect('/')
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
   console.log(req.body)
 })
 
 router.get('/membership',requireAuth, checkUser, (req, res) => {
-  res.render('membership', {
-    title: 'Membership'
+  Member.find().sort({createdAt: -1})
+  .then((result) => {
+    res.render('membership', {
+      title: 'Membership', ourMember: result
+    })
+  })
+  .catch((err)=>{
+    console.log(err)
   })
 })
   
@@ -118,6 +133,5 @@ router.get('/baptism',requireAuth, checkUser, (req, res) => {
     title: 'Baptism'
   })
 })
-
 
 module.exports = router

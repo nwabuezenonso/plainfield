@@ -23,6 +23,7 @@
         <th>Sex</th>
         <th>Home Address</th>
         <th>City/Town</th>
+        <th>Date of birth</th>
         <th>Country</th>
         <th>Zip code</th>
         <th>Email</th>
@@ -45,30 +46,33 @@
     <!--Table body-->
     <tbody>
       <tr>
-        <th scope="row">a</th>
-        <td>Kate</td>
-        <td>Moss</td>
-        <td>USA </td>
-        <td>New York </td>
-        <td>Web Designer </td>
-        <td>23</td>
-        <td>Kate</td>
-        <td>Moss</td>
-        <td>USA  </td>
-        <td>New York City </td>
-        <td>Web Designer</td>
-        <td>23</td>
-        <td>Kate</td>
-        <td>Moss</td>
-        <td>USA / The United Kingdom / China / Russia </td>
-        <td>New York City </td>
-        <td>Web</td>
-        <td>23</td>
-        <td>Web</td>
-        <td>23</td>
-        <td>23</td>
-        <td>Web </td>
-        <td>23</td>
+        <% ourMember.forEach(ourMember => { %>
+        <th scope="row"></th>
+        <td><%= ourMember.fname %></td>
+        <td><%= ourMember.lname %></td>
+        <td><%= ourMember.mname %></td>
+        <td><%= ourMember.address %></td>
+        <td><%= ourMember.maritalstatus %></td>
+        <td><%= ourMember.sex %></td>
+        <td><%= ourMember.homeaddress %></td>
+        <td><%= ourMember.City %></td>
+        <td><%= ourMember.Dob %></td>
+        <td><%= ourMember.country %></td>
+        <td><%= ourMember.Zip %></td>
+        <td><%= ourMember.email %></td>
+        <td><%= ourMember.occupation %></td>
+        <td><%= ourMember.gender %></td>
+        <td><%= ourMember.Baptized %></td>
+        <td><%= ourMember.confirmed %></td>
+        <td><%= ourMember.no_of_children %></td>
+        <td><%= ourMember.children_name %></td>
+        <td><%= ourMember.children_dob %></td>
+        <td><%= ourMember.gender_of_children %></td>
+        <td><%= ourMember.Baptized_kids %></td>
+        <td><%= ourMember.kid_confirmed %></td>
+        <td><%= ourMember.interested_ministries %></td>
+        <td><%= ourMember.Former_church %></td>
+        <%  }) %>
       </tr>
     
     </tbody>
