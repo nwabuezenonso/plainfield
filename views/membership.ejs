@@ -45,8 +45,10 @@
 
     <!--Table body-->
     <tbody>
-      <tr>
-        <% ourMember.forEach(ourMember => { %>
+    
+      <% ourMember.forEach(ourMember => { %>
+        
+      <tr>          
         <th scope="row"></th>
         <td><%= ourMember.fname %></td>
         <td><%= ourMember.lname %></td>
@@ -72,9 +74,8 @@
         <td><%= ourMember.kid_confirmed %></td>
         <td><%= ourMember.interested_ministries %></td>
         <td><%= ourMember.Former_church %></td>
-        <%  }) %>
       </tr>
-    
+      <%   }) %>    
     </tbody>
     <!--Table body-->
 
