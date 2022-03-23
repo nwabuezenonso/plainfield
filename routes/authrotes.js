@@ -42,17 +42,17 @@ router.get('/login', (req, res) => {
 })
   
 router.post('/login', async (req, res) =>{
-    const { name, password } = req.body;
-  
-    try {
-      const user = await User.login(name, password);
-      const token = createToken(user._id);
-      res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
-      res.status(200).json({ user: user._id });
-    } 
-    catch (err) {
-      res.json({ err });
-    }
+  const { name, password } = req.body;
+
+  try {
+    const user = await User.login(name, password);
+    const token = createToken(user._id);
+    res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+    res.status(200).json({ user: user._id });
+  } 
+  catch (err) {
+    res.json({ err });
+  }
 })
   
 router.get('/dashboard',requireAuth, checkUser, (req, res) => {
@@ -110,7 +110,6 @@ router.post('/ourmembersform' , (req, res) =>{
     .catch((err)=>{
       console.log(err)
     })
-  console.log(req.body)
 })
 
 router.get('/membership',requireAuth, checkUser, (req, res) => {
@@ -145,15 +144,14 @@ router.get('/baptism',requireAuth, checkUser, (req, res) => {
 })
 
 router.post('/baptismData', (req, res)=>{
-   const baptismdata = new Baptism(req.body)
-  
-   baptismdata.save()
-    .then((result)=>{
-      res.redirect('/')
-    })
-    .catch((err)=>{
-      console.log(err)
-    })
-  console.log(req.body)
+  const baptismdata = new Baptism(req.body)
+
+  baptismdata.save()
+  .then((result)=>{
+    res.redirect('/')
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
 })
 module.exports = router

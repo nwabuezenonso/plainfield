@@ -4,30 +4,30 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <%- include('./partials/navboard.ejs') %>
-    <div class="main-content">
-        <main>
-          <div>welcome, <b><%= user.name %></b><div>
-            <form method="POST" action="/uploadEventData" enctype="multipart/form-data">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Event Title</label>
-                  <input name="eventname" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Title of event">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Event description</label>
-                  <input name="eventdescription" type="text" class="form-control" id="exampleInputPassword1" placeholder="description of event">
-                </div>
-                <div class="form-check">
-                  <input  name="eventdate" type="date" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <div class="form-group">
-                    <input  name="image"  type="file" style="margin-top: 20px;" class="filepond" id="exampleFormControlFile1">
-                </div>
-                <button type="submit" >Submit</button>
-              </form>
-        </main>
-        <%- include('./partials/specialevent.ejs') %>
-      </div>
+  <%- include('./partials/navboard.ejs') %>
+  <div class="main-content">
+    <main>
+      <div>welcome, <b><%= user.name %></b></div>
+      <form method="POST" action="/uploadEventData" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Event Title</label>
+          <input name="eventname" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Title of event">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Event description</label>
+          <input name="eventdescription" type="text" class="form-control" id="exampleInputPassword1" placeholder="description of event">
+        </div>
+        <div class="form-check">
+          <input  name="eventdate" type="date" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <div class="form-group">
+          <input  name="image"  type="file" style="margin-top: 20px;" class="filepond" id="exampleFormControlFile1">
+        </div>
+        <button type="submit" >Submit</button>
+      </form>
+    </main>
+    <%- include('./partials/specialevent.ejs') %>
+    </div>
 </body>
 </html>
