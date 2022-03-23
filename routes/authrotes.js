@@ -1,10 +1,8 @@
 const { Router } = require('express')
 const jwt = require('jsonwebtoken');
-const  sharp = require('sharp')
 const multer = require('multer');
 const {User, Image, Member, Baptism} = require('../models/user')
 const path =  require('path');
-// const authController = require('../controllers/authController')
 const { requireAuth, checkUser } = require('../middleware/middleware'); 
 const router = Router()
 
@@ -17,7 +15,6 @@ const createToken = (id) => {
 };
 
 //routes
-
 router.get('/signup',requireAuth, (req, res)=>{
     res.render('signup', {
       title: 'Signup'

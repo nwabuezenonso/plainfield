@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// const { isEmail } = require('validator');
 const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
@@ -8,7 +7,6 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true,
     lowercase: true,
-    // validate: [isEmail, 'Please enter a valid email']
   },
   password: {
     type: String,
@@ -112,35 +110,27 @@ const MemberSchema  = new mongoose.Schema({
 const BaptismSchema = new mongoose.Schema({
   name: {
     type: String,
-    // validate: [isEmail, 'Please enter a valid email']
   },
   dob: {
     type: String,
-    // required: true
   },
   pob: {
     type: String,
-    // required: true
   },
   fathername: {
     type: String,
-    // required: true
   },
   mothername: {
     type: String,
-    // required: true
   },
   address: {
     type: String,
-    // required: true
   },
   telephone: {
     type: String,
-    // required: true
   },
   father_occupation: {
     type: String,
-    // required: true
   },
 }, {timestamps: true});
 
