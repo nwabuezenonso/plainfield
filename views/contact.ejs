@@ -54,20 +54,20 @@
   
         </div>
         <div class="col-lg-8">
-          <form action="">
+          <form method="POST" action="/send">
             <div class="card-body form">
               <h3 class="mt-4">Send a message</h3>
               <div class="row">
                 <div class="col-md-6">
                   <div class="md-form mb-0">
                     <label for="form-contact-name" class="">Your name</label>
-                    <input type="text" id="form-contact-name" class="form-control">
+                    <input type="text" name="name" id="form-contact-name" class="form-control">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="md-form mb-0">
                     <label for="form-contact-email" class="">Your email</label>
-                    <input type="text" id="form-contact-email" class="form-control">
+                    <input type="text" name="email" id="form-contact-email" class="form-control">
                   </div>
                 </div>
               </div>
@@ -75,7 +75,7 @@
                 <div class="col-md-12">
                   <div class="md-form mb-0">
                     <label for="form-contact-phone" class="">Your phone</label>
-                    <input type="number" id="form-contact-phone" class="form-control">
+                    <input type="number" name="phone" id="form-contact-phone" class="form-control">
                   </div>
                 </div>
               </div>
@@ -83,7 +83,7 @@
                 <div class="col-md-12">
                   <div class="md-form mb-0">
                     <label for="form-contact-phone" class="">Your message</label>
-                    <textarea id="form-contact-message" class="form-control md-textarea" rows="3"></textarea>
+                    <textarea id="form-contact-message" name="msg" class="form-control md-textarea" rows="3"></textarea>
                     <div class="form-group d-flex justify-content-end"> <button class="button">Send Message</button></div>
                   </div>
                 </div>  
