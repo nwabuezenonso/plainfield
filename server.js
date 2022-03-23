@@ -59,13 +59,6 @@ app.get('/contact', (req, res)=>{
   })
 })
 
-app.get('/baptismForm', (req, res)=>{
-  res.render('baptismForm', {
-    title: 'BaptiseForm'
-  })
-})
-
-
 
 app.use(Authrouters)
 //Error routes

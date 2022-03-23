@@ -127,11 +127,30 @@ router.get('/membership',requireAuth, checkUser, (req, res) => {
     console.log(err)
   })
 })
-  
+
+
+router.get('/baptismForm', (req, res)=>{
+  res.render('baptismForm', {
+    title: 'BaptiseForm'
+  })
+})
+
 router.get('/baptism',requireAuth, checkUser, (req, res) => {
   res.render('baptism', {
     title: 'Baptism'
   })
 })
 
+router.post('/baptism', (req, res)=>{
+  // const memberData = new Member(req.body)
+  
+  // memberData.save()
+  //   .then((result)=>{
+  //     res.redirect('/')
+  //   })
+  //   .catch((err)=>{
+  //     console.log(err)
+  //   })
+  // console.log(req.body)
+})
 module.exports = router
