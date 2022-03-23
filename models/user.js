@@ -107,6 +107,22 @@ const MemberSchema  = new mongoose.Schema({
     type: String
   }
 }, {timestamps: true});
+
+
+const BaptismSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    // validate: [isEmail, 'Please enter a valid email']
+  },
+  password: {
+    type: String,
+    required: true
+  }
+}, {timestamps: true});
+
+
+
+
 //fire a function before doc saved to db
 userSchema.pre('save', async function(next) {
   const salt = await bcrypt.genSalt();

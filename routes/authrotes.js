@@ -142,7 +142,7 @@ router.get('/baptism',requireAuth, checkUser, (req, res) => {
 })
 
 router.post('/baptism', (req, res)=>{
-  // const memberData = new Member(req.body)
+  // const memberData = new Baptism(req.body)
   
   // memberData.save()
   //   .then((result)=>{
@@ -151,6 +151,6 @@ router.post('/baptism', (req, res)=>{
   //   .catch((err)=>{
   //     console.log(err)
   //   })
-  // console.log(req.body)
+  console.log(req.body)
 })
 module.exports = router
