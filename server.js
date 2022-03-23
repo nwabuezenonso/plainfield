@@ -1,8 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser');
-const bodyParser =  require('body-parser') 
-const nodemailer =  require('nodemailer')
 const {User,Image,Member} =require('./models/user')
 const Authrouters = require('./routes/authrotes');
 
