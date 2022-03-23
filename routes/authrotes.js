@@ -2,7 +2,7 @@ const { Router } = require('express')
 const jwt = require('jsonwebtoken');
 const  sharp = require('sharp')
 const multer = require('multer');
-const {User, Image, Member} = require('../models/user')
+const {User, Image, Member, Baptism} = require('../models/user')
 const path =  require('path');
 // const authController = require('../controllers/authController')
 const { requireAuth, checkUser } = require('../middleware/middleware'); 
@@ -88,12 +88,12 @@ router.post("/uploadEventData", upload.single('image'), (req,res)=>{
   eventdata.img =  req.file.filename
 
   eventdata.save((err, doc) =>{
-    if(!err){
-      console.log('save successfully')
-      res.redirect('/dashboard')
-    }else{
-      console.log(err)
-    }
+  if(!err){
+    console.log('save successfully')
+    res.redirect('/dashboard')
+  }else{
+    console.log(err)
+  }
   })
 })
 
@@ -136,21 +136,27 @@ router.get('/baptismForm', (req, res)=>{
 })
 
 router.get('/baptism',requireAuth, checkUser, (req, res) => {
-  res.render('baptism', {
-    title: 'Baptism'
+  Baptism.find().sort({createdAt: -1})
+  .then((result) => {
+    res.render('baptism', {
+      title: 'Baptism', baptism: result
+    })
+  })
+  .catch((err)=>{
+    console.log(err)
   })
 })
 
-router.post('/baptism', (req, res)=>{
-  // const memberData = new Baptism(req.body)
+router.post('/baptismData', (req, res)=>{
+   const baptismdata = new Baptism(req.body)
   
-  // memberData.save()
-  //   .then((result)=>{
-  //     res.redirect('/')
-  //   })
-  //   .catch((err)=>{
-  //     console.log(err)
-  //   })
+   baptismdata.save()
+    .then((result)=>{
+      res.redirect('/')
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
   console.log(req.body)
 })
 module.exports = router

@@ -27,7 +27,7 @@
 
   <section>
       <div class="container">
-        <form action="/baptism" method="POST">
+        <form id="form" action="/baptismData" method="POST">
          
             <div class="form-group">
               <label for="Name">Child Name</label>
@@ -69,12 +69,9 @@
                 <input type="text" name="father_occupation" class="form-control" required id="inputAddress" >
             </div>
 
-            <button class="button">SUBMIT</button></a>
+            <button class="button">SUBMIT</button>
           </form>
       </div>
   </section>
-
-
-
    
 <%- include('./partials/footer.ejs') %>

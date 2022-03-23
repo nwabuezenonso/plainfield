@@ -167,10 +167,10 @@
 /* responsive media query start */
 @media (max-width: 994px) {
 
-    .logo{
-        width: 80px;
-        cursor: pointer;
-    }
+  .logo{
+    width: 80px;
+    cursor: pointer;
+}
 
     .navbar ul{
         position: fixed;

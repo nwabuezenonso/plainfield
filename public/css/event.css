@@ -326,9 +326,9 @@ html{
 @media (max-width: 994px) {
 
   .logo{
-      width: 80px;
-      cursor: pointer;
-  }
+    width: 80px;
+    cursor: pointer;
+}
 
   .navbar ul{
       position: fixed;

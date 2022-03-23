@@ -114,10 +114,34 @@ const BaptismSchema = new mongoose.Schema({
     type: String,
     // validate: [isEmail, 'Please enter a valid email']
   },
-  password: {
+  dob: {
     type: String,
-    required: true
-  }
+    // required: true
+  },
+  pob: {
+    type: String,
+    // required: true
+  },
+  fathername: {
+    type: String,
+    // required: true
+  },
+  mothername: {
+    type: String,
+    // required: true
+  },
+  address: {
+    type: String,
+    // required: true
+  },
+  telephone: {
+    type: String,
+    // required: true
+  },
+  father_occupation: {
+    type: String,
+    // required: true
+  },
 }, {timestamps: true});
 
 
@@ -146,12 +170,14 @@ userSchema.statics.login = async function(name, password) {
 
 const User = mongoose.model('user', userSchema);
 const Image = mongoose.model('img', imageSchema);
-const Member = mongoose.model('member', MemberSchema)
+const Member = mongoose.model('member', MemberSchema);
+const Baptism = mongoose.model('baptism', BaptismSchema)
 
 
 
 module.exports = {
   User,
   Image,
-  Member
+  Member,
+  Baptism
 };
