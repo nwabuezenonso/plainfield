@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser');
 const bodyParser =  require('body-parser') 
-  const {User,Image,Member} =require('./models/user')
+const {User,Image,Member} =require('./models/user')
 const Authrouters = require('./routes/authrotes');
 
 //set up the express function
