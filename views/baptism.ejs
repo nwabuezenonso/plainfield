@@ -7,6 +7,7 @@
 
 <div style="margin: 0 0 0 10%;" class="table-responsive text-nowrap">
   <table class="table">
+
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -21,12 +22,20 @@
       </tr>
     </thead>
     <tbody>
+      
+    <% baptism.forEach(baptism => { %>
       <tr>
         <th scope="row"></th>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td><%= baptism.name %></td>
+        <td><%= baptism.dob %></td>
+        <td><%= baptism.pob %></td>
+        <td><%= baptism.fathername %></td>
+        <td><%= baptism.mothername %></td>
+        <td><%= baptism.address %></td>
+        <td><%= baptism.telephone %></td>
+        <td><%= baptism.father_occupation %></td>
       </tr>
+      <%   }) %>    
     </tbody>
   </table>
 </div>
