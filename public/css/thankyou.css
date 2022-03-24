@@ -1,0 +1,186 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/*HEADER*/
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/bible.jpg') ;
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 7%, rgba(0,0,0,1) 27%, rgba(77,0,116,1) 100%); */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.logo{
+    /* margin-top: 10px; */
+    width: 150px;
+    cursor: pointer;
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0  20px;
+    position: relative;
+} 
+
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/*styling the menu button*/
+.menu-btn {
+    display: none;
+    cursor: pointer;
+}
+  
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+    opacity: 0;
+}
+  
+  /* Rotate last bar */
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+/*Back to navbar styling*/
+.navbar ul li::after{
+    content:  ' ';
+    height:  3px;
+    width: 0;
+    background: #AC7F34;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+.content{
+    width: 100%;
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+
+.content h1{
+    font-size: 50px;
+    margin-top: 80px;
+}
+
+.content p{
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    font-size: 20px;
+}
+.time_link{
+    /* width: 100%; */
+    position:absolute;
+    top: 90%;
+    left: 8%;
+    /* transform: translateY(0%); */
+    /* text-align: center; */
+    color: #fff;
+}
+
+.time_btn{
+      /* width: 100%; */
+      position:absolute;
+      top: 90%;
+      right: 5%;
+      /* transform: translateY(0%); */
+      /* text-align: center; */
+      color: #fff;
+}
+.time_link a{
+    text-decoration: none;
+    color:#fff;
+}
+
+.time_link i{
+    margin: 0 5px 0 5px;
+}
+
+/*Meet our lead and its button*/
+#donate_btn{
+    margin: 10px 30px 10px 30px;
+ }
+ 
+ .button {
+     border-radius: 4px;
+     background-color: #4D0074;
+     border: none;
+     color: #FFFFFF;
+     text-align: center;
+     /* font-size: 28px; */
+     padding: 15px;
+     width: 200px;
+     transition: all 0.5s;
+     cursor: pointer;
+     margin: 5px;
+ }
+   
+ 
+ .button span:after {
+     content: '\00bb';
+     position: absolute;
+     opacity: 0;
+     top: 0;
+     right: -20px;
+     transition: 0.5s;
+ }
+ 
+ .button:hover {
+     padding-right: 25px;
+     background: transparent;
+     border: 2px solid #AC7F34;
+     color: #AC7F34;
+ }
+ 
+ .button:hover span:after {
+     opacity: 1;
+     right: 0;
+ }
+ 
