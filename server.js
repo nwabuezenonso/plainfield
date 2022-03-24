@@ -44,7 +44,9 @@ app.get('/about', (req, res)=>{
 })
 
 app.get('/thankyou', (req, res)=>{
-  res.render('thankyou')
+  res.render('thankyou', {
+    title: 'Thank you'
+  })
 })
 
 
