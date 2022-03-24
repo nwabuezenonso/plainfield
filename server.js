@@ -43,6 +43,11 @@ app.get('/about', (req, res)=>{
   })
 })
 
+app.get('/thankyou', (req, res)=>{
+  res.render('thankyou')
+})
+
+
 app.get('/event', (req, res)=>{
   Image.find().sort({ createdAt: 1})
   .then(function(doc){
