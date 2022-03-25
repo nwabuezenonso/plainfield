@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true , useUnifiedTop
   .then((result) => app.listen(port, () => {console.log('Connected to port ' + port)}))
   .catch((err) => console.log(err));
 
-  app.use(Authrouters)
+
 
 // app.get('*', checkUser)
 app.get('/', (req, res)=>{
