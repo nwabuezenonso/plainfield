@@ -29,7 +29,7 @@ mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true , useUnifiedTop
 
 // app.get('*', checkUser)
 app.get('/', (req, res)=>{
-  Image.find().sort({ createdAt: 1})
+  Image.find().sort({createdAt: -1})
   .then(function(doc){
     res.render('index', {
       title : 'Home' , item: doc
@@ -51,7 +51,7 @@ app.get('/thankyou', (req, res)=>{
 
 
 app.get('/event', (req, res)=>{
-  Image.find().sort({ createdAt: 1})
+  Image.find().sort({createdAt: -1})
   .then(function(doc){
     res.render('event', {
       title : 'Event' , item: doc
