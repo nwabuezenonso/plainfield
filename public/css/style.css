@@ -163,7 +163,6 @@ html{
 /*SERVICES SECTION*/
 h5{
     font-weight: normal;
-    font-size: 18px;
     color: #AC7F34;
 }
 
@@ -560,6 +559,19 @@ h1{
     line-height: 1.5;
     color: #AC7F34;
     font-weight: bolder;
+}
+
+.coffee{
+    font-size: 130px;
+    line-height: 1.5;
+    color: #AC7F34;
+    font-weight: bolder;
+}
+
+.text_data{
+    font-size: 22px;
+    font-weight: bold;
+    color: #AC7F34;
 }
 
 video:focus{
