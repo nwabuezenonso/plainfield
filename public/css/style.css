@@ -562,7 +562,7 @@ h1{
 }
 
 .coffee{
-    font-size: 50px;
+    font-size: 95px;
     line-height: 1.5;
     color: #AC7F34;
     font-weight: bolder;
@@ -585,6 +585,15 @@ video:focus{
         width: 80px;
         cursor: pointer;
     }
+
+    
+    .coffee{
+        font-size: 50px;
+        line-height: 1.5;
+        color: #AC7F34;
+        font-weight: bolder;
+    }
+
 
     .navbar ul{
         position: fixed;
