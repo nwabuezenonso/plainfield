@@ -14,7 +14,6 @@ html{
   width: 100%;
   height: 50vh;
   background-image: linear-gradient(rgba(77, 0, 116, 0.50), rgba(77, 0, 115, 0.50) ), url('../img/event0.jpg') ;
-  /* background: linear-gradient(90deg, rgba(2,0,36,1) 7%, rgba(0,0,0,1) 27%, rgba(77,0,116,1) 100%); */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -23,7 +22,6 @@ html{
 .navbar{
   width: 85%;
   margin: auto;
-  padding: 30px 0;
   display: flex;
   align-items: center;
   justify-content:space-between;
