@@ -1,7 +1,7 @@
 const { Router } = require('express')
 const jwt = require('jsonwebtoken');
 const multer = require('multer');
-const {User, Image, Member, Baptism} = require('../models/user')
+const {User, Image, Member, Baptism, Gallery} = require('../models/user')
 const path =  require('path');
 const { requireAuth, checkUser } = require('../middleware/middleware'); 
 const router = Router()
@@ -62,13 +62,29 @@ router.get('/dashboard',requireAuth, checkUser, (req, res) => {
       title : 'dashboard' , item: doc
     })
   })
+  Gallery.find().sort({createdAt: -1})
+  .then(function(doc){
+    res.render('dashboard', {
+      title : 'dashboard' , item: doc
+    })
+  })
 })
-
 
 var upload = multer({
   storage: multer.diskStorage({
     destination: (req, file, cb) =>{
       cb(null, './uploads')
+    },
+    filename: function(req, file, callback ) {
+      callback(null, file.fieldname + ' - ' + Date.now() + path.extname(file.originalname))
+    }
+  })
+})
+
+var uploadgallery = multer({
+  storage: multer.diskStorage({
+    destination: (req, file, cb) =>{
+      cb(null, './galleryuploads')
     },
     filename: function(req, file, callback ) {
       callback(null, file.fieldname + ' - ' + Date.now() + path.extname(file.originalname))
@@ -94,15 +110,11 @@ router.post("/uploadEventData", upload.single('image'), (req,res)=>{
   })
 })
 
-router.post("/uploadgallery", upload.single('image'), (req,res)=>{
-  console.log(req.file)
-  var eventdata = new Image();
-  eventdata.eventname = req.body.eventname;
-  eventdata.eventdescription = req.body.eventdescription;
-  eventdata.eventdate = req.body.eventdate;
-  eventdata.img =  req.file.filename
+router.post("/uploadgallery", uploadgallery.single('galleryimage'), (req,res)=>{
+  var gallerydata = new Gallery();
+  gallerydata.img =  req.file.filename
 
-  eventdata.save((err, doc) =>{
+  gallerydata.save((err, doc) =>{
   if(!err){
     console.log('save successfully')
     res.redirect('/dashboard')

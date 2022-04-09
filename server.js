@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser');
-const {User,Image,Member} =require('./models/user')
+const {User,Image,Member, Gallery} =require('./models/user')
 const Authrouters = require('./routes/authrotes');
 
 //set up the express function
@@ -11,6 +11,7 @@ const port = process.env.PORT
 // middleware
 app.use(express.static('public'));
 app.use(express.static('uploads'))
+app.use(express.static('galleryuploads'))
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 // app.use(bodyParser.json())
@@ -55,7 +56,7 @@ app.get('/event', (req, res)=>{
     res.render('event', {
       title : 'Event' , item: doc
     })
-  })  
+  })
 })
 
 app.get('/contact', (req, res)=>{

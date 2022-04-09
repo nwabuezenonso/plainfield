@@ -22,25 +22,12 @@
           <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
         <div class="form-group">
-          <input  name="image"  type="file" style="margin-top: 20px;" class="filepond" id="exampleFormControlFile1">
+          <input  name="image" value="image"  type="file" style="margin-top: 20px;"  id="exampleFormControlFile1">
         </div>
         <button type="submit" >Submit</button>
       </form>
     </main>
     <%- include('./partials/specialevent.ejs') %>
-
-
-    <h2>upload gallery</h2>
-    <form method="POST" action="/uploadgallery" enctype="multipart/form-data">
-      <div class="form-group">
-        <input  name="image"  type="file" style="margin-top: 20px;" class="filepond" id="exampleFormControlFile1">
-      </div>
-      <button type="submit" >Submit</button>
-    </form>
-
-    <%- include('./partials/galleryDate.ejs') %>
-  </main>
-
 
   </div>
 </body>

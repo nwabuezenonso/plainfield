@@ -32,15 +32,6 @@ const imageSchema  = new mongoose.Schema({
 
 
 const gallerySchema  = new mongoose.Schema({
-  eventname: {
-    type: String,
-  },
-  eventdescription: {
-    type: String,
-  },
-  eventdate:{
-    type: String
-  },
   img:{
     type: String
   }
