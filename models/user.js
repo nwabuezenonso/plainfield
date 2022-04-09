@@ -31,6 +31,21 @@ const imageSchema  = new mongoose.Schema({
 }, {timestamps: true});
 
 
+const gallerySchema  = new mongoose.Schema({
+  eventname: {
+    type: String,
+  },
+  eventdescription: {
+    type: String,
+  },
+  eventdate:{
+    type: String
+  },
+  img:{
+    type: String
+  }
+}, {timestamps: true});
+
 const MemberSchema  = new mongoose.Schema({
   fname: {
     type: String,
@@ -162,6 +177,7 @@ const User = mongoose.model('user', userSchema);
 const Image = mongoose.model('img', imageSchema);
 const Member = mongoose.model('member', MemberSchema);
 const Baptism = mongoose.model('baptism', BaptismSchema)
+const Gallery = mongoose.model('gallery', gallerySchema) 
 
 
 
@@ -169,5 +185,6 @@ module.exports = {
   User,
   Image,
   Member,
-  Baptism
+  Baptism,
+  Gallery
 };

@@ -94,6 +94,24 @@ router.post("/uploadEventData", upload.single('image'), (req,res)=>{
   })
 })
 
+router.post("/uploadgallery", upload.single('image'), (req,res)=>{
+  console.log(req.file)
+  var eventdata = new Image();
+  eventdata.eventname = req.body.eventname;
+  eventdata.eventdescription = req.body.eventdescription;
+  eventdata.eventdate = req.body.eventdate;
+  eventdata.img =  req.file.filename
+
+  eventdata.save((err, doc) =>{
+  if(!err){
+    console.log('save successfully')
+    res.redirect('/dashboard')
+  }else{
+    console.log(err)
+  }
+  })
+})
+
 router.get('/form', (req, res) => {
   res.render('form', {
     title: 'form'
@@ -142,6 +160,7 @@ router.get('/baptism',requireAuth, checkUser, (req, res) => {
     console.log(err)
   })
 })
+
 
 router.post('/baptismData', (req, res)=>{
   const baptismdata = new Baptism(req.body)

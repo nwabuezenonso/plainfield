@@ -49,7 +49,6 @@ app.get('/thankyou', (req, res)=>{
   })
 })
 
-
 app.get('/event', (req, res)=>{
   Image.find().sort({createdAt: -1})
   .then(function(doc){
@@ -65,6 +64,11 @@ app.get('/contact', (req, res)=>{
   })
 })
 
+app.get('/gallery', (req, res)=>{
+  res.render('gallery', {
+    title: 'Gallery'
+  })
+})
 app.use(Authrouters)
 //Error routes
 app.use((req, res)=>{
