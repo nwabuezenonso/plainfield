@@ -26,7 +26,7 @@
     height: 50vh;
     background-image: linear-gradient(rgba(77, 0, 116, 0.50), rgba(77, 0, 115, 0.50) ) ,url('../img/bible\ reading.jpg') ;
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     background-attachment: fixed;
     background-repeat: no-repeat;
   }
@@ -56,6 +56,10 @@
     text-decoration: none;
     color: #fff;
     text-transform: uppercase;
+  }
+
+  .gallery{
+    margin-top: 10px;
   }
   
   /*styling the menu button*/
